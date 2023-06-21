@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp10"
+    android:background="@drawable/button_border_drawable">
+    <!--
+        android:background="@drawable/button_border_drawable"-->
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBorrowingId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:text="@string/lbl_tvBorrowingId"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBorrowingIdValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvBorrowingId"
+        app:layout_constraintTop_toBottomOf="@+id/tvBorrowingId"
+        tool:text="#59859" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContractDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp30"
+        android:text="@string/lbl_tvContractDate"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContractDateValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="@+id/tvContractDate"
+        app:layout_constraintStart_toStartOf="@+id/tvContractDate"
+        app:layout_constraintTop_toBottomOf="@+id/tvContractDate"
+        tool:text="24 Jun 2022" />
+
+    <View
+        android:id="@+id/div1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginStart="@dimen/dp18"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp18"
+        android:background="@color/color_803A3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvContractDateValue" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBorrowedAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:text="@string/lbl_tvBorrowedAmount"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBorrowedAmountValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvBorrowedAmount"
+        app:layout_constraintTop_toBottomOf="@+id/tvBorrowedAmount"
+        tool:text="RTO (€) 9,999.00" />
+
+    <View
+        android:id="@+id/div2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginStart="@dimen/dp18"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp18"
+        android:background="@color/color_803A3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBorrowedAmountValue" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMonthlyInstallments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:text="@string/monthly_installments"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMonthlyInstallmentsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvMonthlyInstallments"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlyInstallments"
+        tool:text="RTO (€) 1,000.00" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOutstandingBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp30"
+        android:text="Outstanding balance"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOutstandingBalanceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvOutstandingBalance"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutstandingBalance"
+        tool:text="RTO (€) 900.00" />
+
+    <View
+        android:id="@+id/div3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginStart="@dimen/dp18"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp18"
+        android:background="@color/color_803A3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutstandingBalanceValue" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvInterestRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:text="@string/lbl_tvInterestRate"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvInterestRateValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvInterestRate"
+        app:layout_constraintTop_toBottomOf="@+id/tvInterestRate"
+        tool:text="10.00%" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLoanTerm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp30"
+        android:text="@string/loan_term_"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvOutstandingBalance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div3" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLoanTermValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvLoanTerm"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoanTerm"
+        tool:text="12 months" />
+
+
+    <View
+        android:id="@+id/div4"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginStart="@dimen/dp18"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp18"
+        android:background="@color/color_803A3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoanTermValue" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCollateral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:text="Collateral"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div4" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCollateralValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvCollateral"
+        app:layout_constraintTop_toBottomOf="@+id/tvCollateral"
+        tool:text="N/A" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPaymentHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp30"
+        android:text="@string/payment_history"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvOutstandingBalance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div4" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvClickHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#3679FB"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvPaymentHistory"
+        app:layout_constraintTop_toBottomOf="@+id/tvPaymentHistory"
+        android:text="@string/lbl_tvClickHere" />
+
+    <View
+        android:id="@+id/div5"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginStart="@dimen/dp18"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp18"
+        android:background="@color/color_803A3A3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCollateralValue" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPayNow"
+        style="@style/PayNowButtonBg"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp17"
+        android:text="@string/lbl_btnPayNow"
+        app:layout_constraintTop_toBottomOf="@+id/div5"
+        app:layout_constraintEnd_toStartOf="@+id/btnPaymentHistory"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPaymentHistory"
+        style="@style/PaymentHistoryButton"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp17"
+        android:layout_marginBottom="@dimen/dp17"
+        android:text="@string/lbl_btnPaymentHistory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div5"
+        app:layout_constraintStart_toEndOf="@+id/btnPayNow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    android:fillViewport="true">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/btInvite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp60">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_title_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_default_bg"
+                android:paddingBottom="@dimen/dp10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:src="@drawable/ic_back_png"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/HeadingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp22"
+                    android:gravity="center"
+                    android:text="@string/add_joint_account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_signup_desc"
+                style="@style/BasicTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_marginEnd="@dimen/dp15"
+                android:text="@string/add_joint_account_member"
+                android:textSize="@dimen/dp_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_title_container" />
+
+            <TextView
+                android:id="@+id/tv_accountNameLabel"
+                style="@style/LightTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp32"
+                android:letterSpacing="0.2"
+                android:text="@string/create_account_name"
+                android:textAllCaps="true"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_desc" />
+
+            <EditText
+                android:id="@+id/ed_accountName"
+                style="@style/EditTextLoan"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/dp5"
+                android:hint="@string/enter_account_name"
+                android:imeOptions="actionDone"
+                android:maxLength="200"
+                android:textColorHint="@color/white40"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_accountNameLabel" />
+
+            <TextView
+                android:id="@id/tv_createdDate_label"
+                style="@style/LightTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="24dp"
+                android:letterSpacing="0.2"
+                android:text="@string/contact_number"
+                android:textAllCaps="true"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_accountName_error" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSelectPhoneNumber"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="@dimen/dp16"
+                android:background="@drawable/rectangle_without_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_createdDate_label">
+
+                <EditText
+                    android:id="@+id/edSearchNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:hint="@string/search_contact_numbers"
+                    android:inputType="none"
+                    android:maxLength="200"
+                    android:paddingStart="@dimen/dp10"
+                    android:textColorHint="@color/white40"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivSearchContact"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivSearchContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp0"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_search" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUsersList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginEnd="@dimen/dp16"
+                android:background="@drawable/rectangle_line"
+                android:padding="@dimen/dp1"
+                android:paddingTop="@dimen/dp15"
+                android:paddingBottom="@dimen/dp15"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ContactNumber_error"
+                tools:itemCount="2"
+                tools:listitem="@layout/card_account_users" />
+
+
+            <TextView
+                android:id="@+id/tv_accountName_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/ed_accountName"
+                app:layout_constraintStart_toStartOf="@+id/ed_accountName"
+                app:layout_constraintTop_toBottomOf="@+id/ed_accountName" />
+
+            <TextView
+                android:id="@+id/tv_ContactNumber_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/clSelectPhoneNumber"
+                app:layout_constraintStart_toStartOf="@+id/clSelectPhoneNumber"
+                app:layout_constraintTop_toBottomOf="@+id/clSelectPhoneNumber" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clSelectPhoneNumber"
+                app:layout_constraintVertical_bias="0.65" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btInvite"
+        style="@style/BoldButtonHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="40dp"
+        android:maxLength="200"
+        android:text="@string/create_account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

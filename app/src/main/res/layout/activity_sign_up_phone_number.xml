@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".activity.v2.signUp.SignUpPhoneNumberActivity">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:src="@drawable/back_button"
+        android:id="@+id/ibBack"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dp4"
+        android:layout_marginTop="@dimen/dp16"/>
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/BoldTextViewHigh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="20dp"
+        android:text="@string/your_phone_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibBack"
+        android:layout_marginTop="@dimen/dp4"/>
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp24"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/reltime_will_store_your_phone_number_and_send_you_a_authentication_code_to_this_number"
+        android:textColor="@color/white2"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitle"/>
+
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        style="@style/BoldTextViewHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp24"
+        android:letterSpacing="0.2"
+        android:text="@string/country_code_and_number"
+        android:textAllCaps="true"
+        android:textSize="@dimen/sp12"
+        android:fontFamily="@font/inter_medium"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:id="@+id/llLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginStart="@dimen/dp14"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp100"
+        android:background="@drawable/basic_corner"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber">
+
+        <androidx.emoji.widget.EmojiTextView
+            android:id="@+id/tvEmoji"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp2"
+            android:background="@null"
+            android:paddingEnd="@dimen/dp10"
+            android:gravity="center"
+            android:drawableEnd="@drawable/ic_dropdown_blue"
+            android:drawablePadding="@dimen/dp8"
+            android:focusable="false"
+            android:fontFamily="@font/inter_semibold"
+            android:hint="+1"
+            android:inputType="none"
+            android:letterSpacing="0.1"
+            android:minWidth="@dimen/dp40"
+            android:paddingStart="@dimen/dp10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white40"
+            android:textSize="@dimen/sp14" />
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="@dimen/dp1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:background="@color/divider_gray" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/EditTextDefaultSignup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/enter_your_phone_number"
+            android:layout_marginStart="@dimen/dp0"
+            android:layout_marginEnd="@dimen/dp0"
+            android:inputType="phone"
+            android:background="@null"
+            android:digits="+0123456789"
+            android:letterSpacing="0.1"
+            android:textColorHint="@color/white40"
+            android:textSize="@dimen/sp14" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_light"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp12"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/llLinearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/llLinearLayout"/>
+
+    <Button
+        android:id="@+id/btnNext"
+        style="@style/BoldButtonHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp32"
+        android:maxLength="200"
+        android:text="@string/continue_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp60"
+        android:visibility="gone"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

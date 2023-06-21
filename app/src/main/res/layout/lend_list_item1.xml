@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_rtoBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/tv_rtoLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/rto"
+            android:textColor="@color/white60"
+            android:textSize="14sp"  />
+
+        <TextView
+            android:id="@+id/tv_rto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="9999"
+            android:textColor="@color/whitepure"
+            android:textSize="20sp"  />
+        <TextView
+            android:id="@+id/tv_rto1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text=".00"
+            android:textColor="@color/whitepure"
+            android:textSize="@dimen/sp14"  />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/interest_rate_"
+        android:textColor="@color/white60"
+        android:textSize="12sp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="2dp"
+        android:background="@drawable/rectangle_without_line"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tvLoanTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/loan_type"
+        android:textColor="@color/white60"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_rtoBalance" />
+
+    <TextView
+        android:id="@+id/tvLoanType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvLoanTypeLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvLoanTypeLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvLoanTypeLabel" />
+
+
+
+    <TextView
+        android:id="@+id/tv_intrest_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/interest_"
+        android:textColor="@color/white60"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoanTypeLabel" />
+
+    <TextView
+        android:id="@+id/tv_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_intrest_label"
+        app:layout_constraintStart_toEndOf="@+id/tv_intrest_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_intrest_label" />
+
+
+    <TextView
+        android:id="@+id/tv_loan_term_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/installments_"
+        android:textColor="@color/white60"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_intrest_label" />
+
+    <TextView
+        android:id="@+id/tv_loanTerm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_loan_term_label"
+        app:layout_constraintStart_toEndOf="@+id/tv_loan_term_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_loan_term_label" />
+    <TextView
+        android:id="@+id/tv_collatral_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/collateral_"
+        android:textColor="@color/white60"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_loan_term_label" />
+
+
+    <TextView
+        android:id="@+id/tv_collatral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_collatral_label"
+        app:layout_constraintStart_toEndOf="@+id/tv_collatral_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_collatral_label"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_expactedReturn_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/expected_return"
+        android:textColor="@color/white60"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_collatral_label" />
+
+
+    <TextView
+        android:id="@+id/tv_expactedReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/green"
+        android:textSize="@dimen/sp12"
+        android:layout_marginStart="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_expactedReturn_label"
+        app:layout_constraintStart_toEndOf="@+id/tv_expactedReturn_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_expactedReturn_label"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <Button
+        android:id="@+id/btn_modify"
+        style="@style/BoldButtonHigh"
+        android:background="@drawable/rectangle_without_line"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp30"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/modify"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_expactedReturn_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <Button
+        android:id="@+id/btn_remove"
+        style="@style/BoldButtonHigh"
+        android:background="@drawable/rectangle_without_line"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp30"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/remove"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/red1"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_modify"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline68"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.53" />
+
+
+    <View
+        android:id="@+id/view22"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/grey50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_modify" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

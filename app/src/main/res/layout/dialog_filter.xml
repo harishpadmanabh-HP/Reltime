@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#1D2435">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="@dimen/dp22"
+        android:layout_height="@dimen/dp23"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:text="Filter by"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_16sp"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toEndOf="@+id/ivClose"
+        app:layout_constraintTop_toTopOf="@+id/ivClose" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLoanRangeTitle"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="@dimen/dp17"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp17"
+        android:text="@string/lbl_tvLoanRangeTitle"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/sbLoanRange"
+        style="@style/Widget.App.Slider"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp17"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:valueFrom="1.0"
+        android:valueTo="100000.0"
+        app:labelBehavior="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoanRangeTitle"
+        app:thumbColor="#387DFF"
+        app:values="@array/price_range_initial_values" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLowLoanRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RTO (€) 1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/sbLoanRange"
+        app:layout_constraintTop_toBottomOf="@+id/sbLoanRange" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHighLoanRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RTO (€) 100,000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="@+id/sbLoanRange"
+        app:layout_constraintTop_toBottomOf="@+id/sbLoanRange" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLoanTermTitle"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="@dimen/dp26"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp17"
+        android:text="@string/lbl_tvLoanTermTitle"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLowLoanRange" />
+
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/sbLoanTermRange"
+        style="@style/Widget.App.Slider"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp17"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:valueFrom="1.0"
+        android:valueTo="36.0"
+        app:labelBehavior="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoanTermTitle"
+        app:thumbColor="#387DFF"
+        app:values="@array/term_range_initial_values" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLowLoanTermRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 Month"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/sbLoanRange"
+        app:layout_constraintTop_toBottomOf="@+id/sbLoanTermRange" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHighLoanTermRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="36 Months"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="@+id/sbLoanRange"
+        app:layout_constraintTop_toBottomOf="@+id/sbLoanTermRange" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvInterestRate"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="@dimen/dp26"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp17"
+        android:text="Interest Rate"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHighLoanTermRange" />
+
+    <RadioGroup
+        android:id="@+id/rbIntrestRate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="17dp"
+        android:layout_marginTop="@dimen/dp14"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInterestRate">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvZero"
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_weight=".5"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="0%"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvLessFive"
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight=".5"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/lbl_tvLessFive"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvFiveToTen"
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight=".5"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="5-10%"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvGraterThenTen"
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight=".5"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/lbl_tvGraterThenTen"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium" />
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCollateral"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="@dimen/dp26"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp17"
+        android:text="Collateral"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbIntrestRate" />
+
+    <RadioGroup
+        android:id="@+id/rbCollateral"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCollateral">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvNoCollateral"
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="@dimen/dp17"
+            android:layout_marginTop="@dimen/dp14"
+            android:layout_weight=".5"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="No Collateral"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvCollateralRange"
+            android:layout_width="0dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="@dimen/dp17"
+            android:layout_marginTop="@dimen/dp14"
+            android:layout_marginEnd="@dimen/dp17"
+            android:layout_weight=".5"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/with_collateral"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium" />
+    </RadioGroup>
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gCollateralRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="sbCollateralRange,tvLowCollateralRange,tvHighCollateralRange" />
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/sbCollateralRange"
+        style="@style/Widget.App.Slider"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp17"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:valueFrom="1.0"
+        android:valueTo="100000.0"
+        android:visibility="gone"
+        app:labelBehavior="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbCollateral"
+        app:thumbColor="#387DFF"
+        app:values="@array/price_range_initial_values" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvLowCollateralRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RTO (€) 1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/sbCollateralRange"
+        app:layout_constraintTop_toBottomOf="@+id/sbCollateralRange" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvHighCollateralRange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RTO (€) 100,000"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="@+id/sbCollateralRange"
+        app:layout_constraintTop_toBottomOf="@+id/sbCollateralRange" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnClear"
+        style="@style/PaymentHistoryButton"
+        android:layout_width="0dp"
+        android:layout_margin="@dimen/dp17"
+        android:backgroundTint="#293347"
+        android:text="Clear all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnApplyFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHighCollateralRange" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnApplyFilter"
+        style="@style/PayNowButtonBg"
+        android:layout_width="0dp"
+        android:layout_margin="@dimen/dp17"
+        android:text="Apply Filter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnClear"
+        app:layout_constraintTop_toBottomOf="@+id/tvHighCollateralRange" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

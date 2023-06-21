@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_afterupload_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:id="@+id/rlUploadItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/basic_corner"
+        android:backgroundTint="@color/round_gradient_base"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10">
+
+        <TextView
+            android:id="@+id/tv_pick_item_label"
+            style="@style/MediumTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_upload_icon"
+            android:drawablePadding="@dimen/dp20"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="2" />
+
+        <ImageView
+            android:id="@+id/ivCloseUploadVideo"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp10"
+            android:src="@drawable/ic_close"
+            app:tint="@color/app_light_blue" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvUploadError"
+        style="@style/BasicTextViewSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp16"
+        android:drawableLeft="@drawable/ic_data_error"
+        android:drawablePadding="@dimen/dp10"
+        android:text="@string/kycin_upload_error"
+        android:textSize="@dimen/dp12"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvReupload"
+        style="@style/BasicTextViewSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp25"
+        android:text="@string/kycin_reupload_label"
+        android:textColor="@color/white80"
+        android:visibility="visible" />
+
+    <!--<Button
+        android:id="@+id/btSubmit"
+        style="@style/BoldButtonHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp42"
+        android:layout_marginEnd="@dimen/dp16"
+        android:text="@string/kycin_submit_button_label"
+        android:visibility="visible" />-->
+
+    <Button
+        android:id="@+id/btResubmit"
+        style="@style/BoldButtonHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp42"
+        android:layout_marginEnd="@dimen/dp16"
+        android:text="@string/kycin_resubmit_button_label"
+        android:visibility="visible" />
+</LinearLayout>

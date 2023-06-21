@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/ivContainer"
+        android:layout_width="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp15"
+        android:layout_height="@dimen/dp30"
+        android:layout_marginStart="@dimen/dp10"
+        android:background="@drawable/circluar_background"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUserIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundImageStyle" />
+
+        <TextView
+            android:id="@+id/tvLogoChar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="A"
+            android:textSize="@dimen/sp12"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_notification_title"
+        android:layout_marginStart="@dimen/dp12"
+        app:layout_constraintTop_toTopOf="@+id/ivContainer"
+        app:layout_constraintStart_toEndOf="@+id/ivContainer"
+        app:layout_constraintEnd_toStartOf="@+id/ivRead"
+        android:layout_width="0dp"
+        android:layout_marginEnd="@dimen/dp8"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        tools:textColor="@color/dark"
+        tools:text=" This is the simple text.kajsdhjahsdkhaksdhkajsdhkjahsdkajshdkahskdjhaksdhkahsdkjasdkjhakdshaksdhkashdkahsdkhaksdhkasjdhkashdkjahskjdhaksjdhkjashdkashdkhajksd"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="@dimen/dp8"
+        android:layout_height="@dimen/dp8"
+        android:src="@drawable/ic_dot"
+        app:tint="@color/red"
+        android:id="@+id/ivRead"
+        android:layout_marginEnd="@dimen/dp12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_notification_title"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_notification_title"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginTop="@dimen/dp4"
+        android:id="@+id/tv_notification_time"
+        android:textColor="@color/white90"
+        android:textSize="@dimen/sp12"
+        android:fontFamily="@font/inter_light"
+        android:maxLines="1"
+        android:text="2m ago"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notification_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_notification_title"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:drawableStart="@drawable/ic_dot"
+        android:id="@+id/tv_notification_see_more"
+        android:textColor="@color/white90"
+        android:textSize="@dimen/sp12"
+        android:layout_marginStart="@dimen/dp4"
+        android:drawablePadding="@dimen/dp4"
+        android:fontFamily="@font/inter_light"
+        android:maxLines="1"
+        android:text="See more"
+        app:layout_constraintStart_toEndOf="@+id/tv_notification_time"
+        app:layout_constraintTop_toTopOf="@+id/tv_notification_time"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_notification_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:id="@+id/view11"
+        android:layout_width="0dp"
+        android:layout_height=".5dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="@+id/tv_notification_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ivContainer"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notification_see_more" />
+</androidx.constraintlayout.widget.ConstraintLayout>

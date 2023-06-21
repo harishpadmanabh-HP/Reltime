@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".activity.kyc.KYCSplashActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp0"
+        android:layout_marginBottom="@dimen/dp20"
+        app:layout_constraintBottom_toTopOf="@id/btSubmit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/BoldTextViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp50"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_title_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_step1_label"
+                style="@style/LargeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp40"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_step1_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+            <TextView
+                android:id="@+id/tv_doc_title"
+                style="@style/MediumTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_selectdoc_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_step1_label" />
+
+            <TextView
+                android:id="@+id/tv_docdesc"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:lineSpacingExtra="@dimen/dp6"
+                android:text="@string/kycin_docdesc_label"
+                android:textColor="@color/white80"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_doc_title" />
+
+            <TextView
+                android:id="@+id/tv_doc_type_label"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1"
+                android:text="@string/kycin_doctype_label"
+                android:textColor="@color/white80"
+                android:textSize="@dimen/dp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_docdesc" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_iddoc"
+                style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp60"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp15"
+                android:background="@drawable/drop_down_expanded"
+                android:entries="@array/id_doc_list"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_doc_type_label"
+                app:popupTheme="@style/SpinnerPopUpTheme" />
+
+            <View
+                android:id="@+id/v_dv1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp25"
+                android:layout_marginEnd="@dimen/dp15"
+                android:background="@color/gray50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sp_iddoc" />
+
+            <TextView
+                android:id="@+id/tv_step2_label"
+                style="@style/LargeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_step2_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_dv1" />
+
+            <TextView
+                android:id="@+id/tv_detail_title"
+                style="@style/MediumTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_details_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_step2_label" />
+
+            <TextView
+                android:id="@+id/tv_detail_desc"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:lineSpacingExtra="@dimen/dp6"
+                android:text="@string/kycin_detailsdesc_label"
+                android:textColor="@color/white80"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_title" />
+
+            <TextView
+                android:id="@+id/tv_dob_error"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp15"
+                android:drawableLeft="@drawable/ic_data_error"
+                android:drawablePadding="@dimen/dp10"
+                android:text="@string/kycin_dob_error"
+                android:textSize="@dimen/dp12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ed_dob_input" />
+
+            <TextView
+                android:id="@+id/tv_name_label"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1"
+                android:text="@string/kycin_name_label"
+                android:textColor="@color/white80"
+                android:textSize="@dimen/dp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_detail_desc" />
+
+            <EditText
+                android:id="@+id/ed_name_input"
+                style="@style/EditTextDefault"
+                android:layout_marginTop="@dimen/dp5"
+                android:hint="Enter full name"
+                android:textColorHint="@color/white20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_label" />
+
+            <TextView
+                android:id="@+id/tvDocumentIdLabel"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1"
+                android:text="@string/kycin_document_id"
+                android:textColor="@color/white80"
+                android:textSize="@dimen/dp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ed_name_input" />
+
+            <EditText
+                android:id="@+id/edDocumentId"
+                style="@style/EditTextDefault"
+                android:layout_marginTop="@dimen/dp5"
+                android:hint="Enter document id"
+                android:textColorHint="@color/white20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDocumentIdLabel" />
+
+            <TextView
+                android:id="@+id/tv_city_label"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1"
+                android:text="@string/kycin_dob_label"
+                android:textColor="@color/white80"
+                android:textSize="@dimen/dp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edDocumentId" />
+
+            <EditText
+                android:id="@+id/ed_dob_input"
+                style="@style/EditTextDefault"
+                android:layout_marginTop="@dimen/dp5"
+                android:focusable="false"
+                android:hint="YYYY-MM-DD"
+                android:inputType="none"
+                android:textColorHint="@color/white20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_city_label" />
+
+            <!--            android:background="@drawable/error"
+    -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gd_divider_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/tv_expdate_label"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1"
+                android:text="@string/kycin_expdate_label"
+                android:textColor="@color/white80"
+                android:textSize="@dimen/dp12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_dob_error" />
+
+            <EditText
+                android:id="@+id/ed_expdate_input"
+                style="@style/EditTextDefault"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp15"
+                android:background="@drawable/basic_corner"
+                android:focusable="false"
+                android:hint="YYYY-MM-DD"
+                android:inputType="none"
+                android:textColorHint="@color/white20"
+                app:layout_constraintEnd_toEndOf="@id/gd_divider_start"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_expdate_label" />
+
+            <TextView
+                android:id="@+id/tv_issuedate_label"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1"
+                android:text="@string/kycin_issuedate_label"
+                android:textColor="@color/white80"
+                android:textSize="@dimen/dp12"
+                app:layout_constraintStart_toStartOf="@id/gd_divider_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_dob_error" />
+
+            <EditText
+                android:id="@+id/ed_issuedate_input"
+                style="@style/EditTextDefault"
+                android:layout_width="@dimen/dp0"
+                android:layout_height="@dimen/dp50"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp15"
+                android:background="@drawable/basic_corner"
+                android:focusable="false"
+                android:hint="YYYY-MM-DD"
+                android:inputType="date"
+                android:textColorHint="@color/white20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/gd_divider_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_issuedate_label" />
+
+            <View
+                android:id="@+id/v_dv2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp25"
+                android:layout_marginEnd="@dimen/dp15"
+                android:background="@color/gray50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ed_issuedate_input" />
+
+            <TextView
+                android:id="@+id/tv_step3_label"
+                style="@style/LargeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_step3_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v_dv2" />
+
+            <TextView
+                android:id="@+id/tv_upload_title"
+                style="@style/MediumTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_updatedoc_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_step3_label" />
+
+            <TextView
+                android:id="@+id/tvUploadDocStar"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/tv_upload_title"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_upload_title"
+                app:layout_constraintStart_toEndOf="@+id/tv_upload_title"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1" />
+
+
+            <TextView
+                android:id="@+id/tv_uploaddesc_desc"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:lineSpacingExtra="@dimen/dp6"
+                android:text="@string/kycin_updatedocdesc_label"
+                android:textColor="@color/white80"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_upload_title" />
+
+            <LinearLayout
+                android:id="@+id/ll_document_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp25"
+                android:layout_marginEnd="@dimen/dp15"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_uploaddesc_desc">
+
+                <include
+                    android:id="@+id/layoutAfterUploadDocument"
+                    layout="@layout/layout_after_upload_document" />
+
+                <include
+                    android:id="@+id/layoutPrepareUploadDocument"
+                    layout="@layout/layout_upload_document" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStep4"
+                style="@style/LargeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_step4_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_document_container" />
+
+            <TextView
+                android:id="@+id/tvVideoUpload"
+                style="@style/MediumTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:text="@string/kycin_upload_video_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStep4" />
+            <TextView
+                android:id="@+id/tvUploadUploadStar"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/tvVideoUpload"
+                app:layout_constraintBottom_toBottomOf="@+id/tvVideoUpload"
+                app:layout_constraintStart_toEndOf="@+id/tvVideoUpload"
+                android:fontFamily="@font/inter_medium"
+                android:letterSpacing="0.1" />
+            <TextView
+                android:id="@+id/tvUploadDesc"
+                style="@style/BasicTextViewSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp16"
+                android:lineSpacingExtra="@dimen/dp6"
+                android:text="@string/kycin_upload_video_desc"
+                android:textColor="@color/white80"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvVideoUpload" />
+
+            <LinearLayout
+                android:id="@+id/llVideoContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp25"
+                android:layout_marginEnd="@dimen/dp15"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp40"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUploadDesc">
+
+                <include
+                    android:id="@+id/layoutPrepareUploadVideo"
+                    layout="@layout/layout_upload_document" />
+
+                <include
+                    android:id="@+id/layoutAfterUploadVideo"
+                    layout="@layout/layout_after_upload_video" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btSubmit"
+        style="@style/BoldButtonHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp42"
+        android:layout_marginEnd="@dimen/dp16"
+        android:text="@string/kycin_submit_button_label"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

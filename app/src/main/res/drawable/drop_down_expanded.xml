@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <layer-list>
+            <item android:id="@+id/bg" android:drawable="@drawable/basic_corner">
+                <shape android:shape="rectangle">
+                    <padding android:left="@dimen/dp12" android:right="@dimen/dp12" />
+                </shape>
+
+            </item>
+            <item android:id="@+id/ic_arrow_down" android:drawable="@drawable/ic_spinner_down" android:gravity="center|end" android:right="@dimen/dp12">
+
+            </item>
+
+        </layer-list>
+    </item>
+</selector>

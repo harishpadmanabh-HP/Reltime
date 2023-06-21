@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item android:drawable="@drawable/ic_vprocess_circle">
+                <shape android:shape="rectangle">
+                    <padding android:left="@dimen/dp12" android:right="@dimen/dp12" />
+                </shape>
+
+            </item>
+            <item android:drawable="@drawable/img_kycinprogress" android:gravity="center|end" android:right="@dimen/dp12" />
+        </layer-list>
+    </item>
+</selector>

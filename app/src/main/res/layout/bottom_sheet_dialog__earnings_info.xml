@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/basic_cornerx">
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/BoldTextViewHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/earnings_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewLine"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/dp30"
+        android:layout_height="@dimen/dp30"
+        android:src="@drawable/close_24px"
+        android:id="@+id/ivClose"
+        android:padding="@dimen/dp6"
+        app:tint="@color/app_light_blue"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/dp16"
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:background="@color/white20"
+        android:id="@+id/viewLine"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/tvTotalInterestTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/total_of_12_payments"
+        android:textColor="@color/white80"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+    <TextView
+        android:id="@+id/tvTotalInterest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp12"
+        android:layout_marginEnd="@dimen/dp16"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end|center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalInterestTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalInterestTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvTotalInterestTitle" />
+
+
+    <TextView
+        android:id="@+id/tvTotalEarningsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/total_of_12_payments"
+        android:textColor="@color/white80"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalInterestTitle" />
+
+    <TextView
+        android:id="@+id/tvTotalEarnings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp12"
+        android:layout_marginEnd="@dimen/dp16"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end|center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTotalEarningsTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalEarningsTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvTotalEarningsTitle" />
+
+
+    <TextView
+        android:id="@+id/tvReltimeFeeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/total_of_12_payments"
+        android:textColor="@color/white80"
+        android:textSize="@dimen/sp12"
+        android:layout_marginBottom="@dimen/dp40"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalEarningsTitle" />
+
+    <TextView
+        android:id="@+id/tvReltimeFee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp12"
+        android:layout_marginEnd="@dimen/dp16"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="end|center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tvReltimeFeeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvReltimeFeeTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvReltimeFeeTitle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

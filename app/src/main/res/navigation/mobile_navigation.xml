@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.accubits.reltime.activity.v2.home.HomeV2Fragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/gotoWallet"
+            app:destination="@id/wallet" />
+        <action
+            android:id="@+id/gotoLoans"
+            app:destination="@id/loans" />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/wallet"-->
+<!--        android:name="com.accubits.reltime.views.home.ui.dashboard.WalletFragment"-->
+<!--        android:label="@string/title_dashboard"-->
+<!--        tools:layout="@layout/fragment_dashboard" />-->
+    <fragment
+        android:id="@+id/wallet"
+        android:name="com.accubits.reltime.activity.v2.wallet.home.WalletV2Fragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+
+<!--        <action-->
+<!--            android:id="@+id/gotoQrCode"-->
+<!--            app:destination="@id/qrCode" />-->
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/loans"
+        android:name="com.accubits.reltime.activity.v2.loan.LoanFragmentV2"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_loan_v2" />
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.accubits.reltime.views.home.ui.settings.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
+</navigation>

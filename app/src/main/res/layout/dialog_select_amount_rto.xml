@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_dialog">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="@dimen/dp22"
+        android:layout_height="@dimen/dp23"
+        android:layout_marginEnd="@dimen/dp12"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle"
+        app:srcCompat="@drawable/ic_close" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/select_account"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_16sp"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_reltimeaccounts"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="@dimen/dp17"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp17"
+        android:text="@string/my_reltime_accounts"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_reltimeAccount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_reltimeaccounts" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_myjoinaccounts"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp17"
+        android:text="@string/my_joined_accounts"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_reltimeAccount" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvJointAccounts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_myjoinaccounts" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

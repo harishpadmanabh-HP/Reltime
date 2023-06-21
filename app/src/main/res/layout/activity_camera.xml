@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_default_bg"
+        android:paddingBottom="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp10"
+            android:src="@drawable/ic_back_png"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BoldTextViewHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp22"
+            android:gravity="center"
+            android:text="KYC Verification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.accubits.reltime.activity.camera.facedetector.GraphicOverlay
+        android:id="@+id/graphic_overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="V,9:16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    -->
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imagePreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout12" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPose"
+        app:layout_constraintBottom_toBottomOf="@+id/imagePreview"
+        app:layout_constraintEnd_toEndOf="@+id/imagePreview"
+        android:layout_width="@dimen/dimen_100dp"
+        app:srcCompat="@drawable/ic_look_streight"
+        android:layout_height="@dimen/dimen_100dp"/>
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/ivGIF"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/face_detection"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tvMoveFace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+  <!--  <ImageButton
+        android:id="@+id/stop_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_stop"
+        android:contentDescription="@string/stop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ImageContrastCheck" />-->
+
+
+
+
+    <View
+        android:background="@color/app_default_bg"
+        android:id="@+id/bottomView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp120"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/textBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="capture_button,stop_button"/>
+
+    <Button
+        android:id="@+id/capture_button"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Start Recording"
+        android:layout_margin="@dimen/dimen_16dp"
+        app:layout_constraintDimensionRatio="H,16:1.9"
+        app:layout_constraintStart_toStartOf="@id/bottomView"
+        app:layout_constraintEnd_toEndOf="@id/bottomView"
+        app:layout_constraintBottom_toBottomOf="@id/bottomView"/>
+    <Button
+        android:id="@+id/stop_button"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Save"
+        android:visibility="gone"
+        android:layout_margin="@dimen/dimen_16dp"
+        app:layout_constraintDimensionRatio="H,16:1.9"
+        app:layout_constraintStart_toStartOf="@id/bottomView"
+        app:layout_constraintEnd_toEndOf="@id/bottomView"
+        app:layout_constraintBottom_toBottomOf="@id/bottomView"/>
+
+    <TextView
+        android:id="@+id/tvMoveFace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp20"
+        android:text="Turn Straight"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintTop_toTopOf="@id/bottomView"
+        app:layout_constraintBottom_toBottomOf="@id/bottomView"
+        app:layout_constraintBottom_toTopOf="@+id/textBarrier"
+        app:layout_constraintEnd_toEndOf="@id/bottomView"
+        app:layout_constraintStart_toStartOf="@id/bottomView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

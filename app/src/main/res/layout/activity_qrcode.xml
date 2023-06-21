@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".activity.qrcode.QRCodeActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_default_bg"
+        android:paddingBottom="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp10"
+            android:src="@drawable/ic_back_png"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BoldTextViewHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp22"
+            android:gravity="center"
+            android:id="@+id/tvTitle"
+            android:text="@string/wallet_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <View
+        android:id="@+id/qrBg"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/dp14"
+        android:layout_marginEnd="@dimen/dp14"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_wallet_id"
+        android:layout_marginTop="@dimen/dp26"
+        android:background="@drawable/qr_code_bg"
+        android:layout_height="0dp"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivQrCode"
+        android:layout_marginTop="@dimen/dp60"
+        app:layout_constraintTop_toTopOf="@+id/qrBg"
+        app:layout_constraintStart_toStartOf="@+id/qrBg"
+        app:layout_constraintEnd_toEndOf="@+id/qrBg"
+        android:layout_width="@dimen/dp170"
+        android:layout_height="@dimen/dp170"/>
+
+    <Button
+        android:id="@+id/bt_download"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/dp28"
+        android:layout_marginTop="@dimen/dp35"
+        android:layout_marginEnd="@dimen/dp28"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/bt_share"
+        app:layout_constraintTop_toBottomOf="@+id/ivQrCode"
+        app:layout_constraintStart_toStartOf="@+id/qrBg"
+        android:text="Download" />
+    <Button
+        android:id="@+id/bt_share"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/dp28"
+        app:layout_constraintStart_toEndOf="@+id/bt_download"
+        app:layout_constraintTop_toTopOf="@+id/bt_download"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_download"
+        app:layout_constraintEnd_toEndOf="@+id/qrBg"
+        android:text="Share" />
+
+    <View
+        android:id="@+id/v_divider"
+        android:layout_marginTop="@dimen/dp25"
+        app:layout_constraintStart_toStartOf="@+id/qrBg"
+        app:layout_constraintEnd_toEndOf="@+id/qrBg"
+        app:layout_constraintTop_toBottomOf="@+id/bt_share"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#3A3A3A"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/v_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white90"
+        android:layout_marginTop="@dimen/dp25"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toStartOf="@+id/qrBg"
+        android:layout_marginStart="@dimen/dp21"
+        android:text="My Wallet Address"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        app:srcCompat="@drawable/ic_copy"
+        android:id="@+id/iv_copy"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="@+id/qrBg"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_width="@dimen/dp23"
+        android:layout_marginEnd="@dimen/dp25"
+        android:layout_height="@dimen/dp23"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_wallet_id"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:layout_width="0dp"
+        android:paddingBottom="@dimen/dp30"
+        android:layout_marginStart="@dimen/dp25"
+        android:layout_marginEnd="@dimen/dp25"
+        android:textSize="@dimen/sp24"
+        tools:text="123124234234234"
+        app:layout_constraintEnd_toStartOf="@+id/iv_copy"
+        app:layout_constraintStart_toStartOf="@+id/qrBg"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

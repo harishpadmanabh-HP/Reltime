@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "337116365599",
+    "project_id": "reltime-2022",
+    "storage_bucket": "reltime-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337116365599:android:3165a301945b61c1bf662a",
+        "android_client_info": {
+          "package_name": "com.accubits.reltime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337116365599-eqi8g9ct7pu7ma76omhp8kkgt30opkg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWT-BenNyt8Z0ZDaQln05U6Ig0m-wG8L8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337116365599-eqi8g9ct7pu7ma76omhp8kkgt30opkg2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

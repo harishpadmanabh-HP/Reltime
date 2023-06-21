@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.accubits.reltime">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
+    <!-- <uses-permission android:name="android.permission.RECORD_AUDIO" /> -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <queries>
+
+        <!-- Camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".ReltimeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/nagara_logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/nagara_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Reltime">
+
+        <activity
+            android:name=".activity.v2.wallet.myaccounts.MyAccountsComposeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.v2.transfer.WalletAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.v2.transfer.EmailAddressActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.v2.transfer.PhoneNumberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.accubits.reltime.activity.v2.common.contactPicker.ContactPickerComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_contact_picker_compose"
+            android:theme="@style/Theme.Reltime" />
+        <activity
+            android:name=".activity.v2.common.accountpicker.AccountPickerComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_account_picker_compose" />
+        <activity
+            android:name=".activity.v2.common.currencypicker.CurrencyPickerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_account_picker_compose" />
+        <activity
+            android:name=".activity.v2.transfer.SendAmountActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".activity.v2.wallet.move.MoveComposeActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.v2.wallet.bridge.BridgeActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.v2.wallet.swap.SwapActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.v2.wallet.deposit.DepositActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activity.v2.wallet.swap.SwapSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.common.walletpicker.WalletAddressPickerV2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.v2.support.SupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.v2.myloan.SelectAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.v2.transfer.TransferActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.transfer.TransferSuccessActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.wallet.move.MoveSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.paymentHistory.PaymentHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.myloan.MyLoanActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".base.BaseActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.lending.DirectLendingV2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mnemonic.ConfirmRecoveryKeyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.permission.PermissionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.login.BiometricLoginV2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.signUp.SetUpProfileConfirmActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.signUp.SetUpProfileActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.signUp.OTPVerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.v2.signUp.SignUpPhoneNumberActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.v2.welcomeScreen.WelcomeScreen"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".views.video.FullscreenVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:label="@string/title_activity_fullscreen_video"
+            android:theme="@style/Theme.Reltime.Fullscreen" />
+        <activity
+            android:name=".activity.biometricLogin.LoginPINCreationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.accubits.reltime.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fileprovider" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="face" />
+
+        <activity
+            android:name=".activity.qrcode.QRCodeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".firebase.ReltimeFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activity.notification.NotificationDetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".activity.notification.NotificationActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support"
+                android:value=".activity.notification.NotificationActivity" />
+        </activity>
+        <activity
+            android:name=".activity.notification.NotificationActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.jointAccount.JointAccountContactSearchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.jointAccount.CreateJointAccountActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.jointAccount.EditJointActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.jointAccount.ViewJointActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settings.SettingsOTPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settings.SettingsUpdateEmailMobileNumberActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.kyc.KYCVideoResultLauncherActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.contacts.ContactActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mnemonic.EntryMemonicActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mnemonic.ImportMemonicActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mnemonic.MnemonicActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.loan.LendingDetailActivity1"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.lend.LendSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.biometric.BiometricEnableActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.mpin.MpinValidateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.mpin.MpinConfirmActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.mpin.MPINCreateActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.rto.BuyRTOActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.about.AboutActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.privacy.PrivacyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settings.MyAccountStartActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.myAccounts.MyAccountsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.verify.LoginOTPVerifyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.home.ContainerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_container"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settings.SettingsNotificationAndSecurityActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settings.SettingsFAQActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settings.SettingsChangePasswordActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activity.settings.SettingsEditAddressActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.settings.SettingsProfileActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.reset.ResetSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.reset.ResetPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.forgot.ForgotPasswordActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.kyc.KYCVerificationProgressActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.kyc.KYCDetailsActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.kyc.KYCSplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.rto.RTOSendWyreSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.rto.WyreWebViewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.addBankAccount.AddBankAccountActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mnemonic.WalletRestoreSuccessActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.v2.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Reltime.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.camera.CameraActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.v2.wallet.qrCode.QrCodeV2Activity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.v2.wallet.mywallet.WalletDetailV2Activity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.v2.wallet.jointaccount.JointAccountMemberListActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.v2.wallet.accountDetail.AccountDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.v2.wallet.transactiondetail.TransactionDetailV2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".activity.notification.WalletV2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name=".activity.v2.fetchotp.broadcast.SmsReceiver"
+            android:exported="false"
+            android:permission="com.google.android.gms.auth.api.phone.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

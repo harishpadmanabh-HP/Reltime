@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".activity.v2.transfer.WalletAddressActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dp2"
+        android:translationZ="@dimen/dp2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tvToolbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/darkBlack"
+        android:elevation="@dimen/dp2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginStart="@dimen/dp10"
+            android:padding="@dimen/dp8"
+            android:scaleType="fitXY"
+            android:tint="@color/blue1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wallet_address"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp16"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/choose_token"
+        android:textColor="@color/white80"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvToolbar" />
+    <TextView
+        android:id="@+id/tvToken"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp50"
+        android:background="@drawable/basic_corner"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="start|center_vertical"
+        android:hint="@string/select_token"
+        android:maxLines="1"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginTop="12dp"
+        android:paddingStart="@dimen/dp10"
+        android:paddingTop="@dimen/dp10"
+        android:paddingEnd="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10"
+        android:textColor="@color/white80"
+        android:textColorHint="@color/white20"
+        android:textSize="@dimen/sp14"
+        app:drawableEndCompat="@drawable/ic_dropdown_white" />
+
+    <Spinner
+        android:id="@+id/sp_token"
+        style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp50"
+        android:visibility="invisible"
+        android:spinnerMode="dropdown"
+        android:background="@drawable/basic_corner"
+        app:layout_constraintEnd_toEndOf="@+id/tvToken"
+        app:layout_constraintStart_toStartOf="@+id/tvToken"
+        app:layout_constraintTop_toBottomOf="@+id/tvToken" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/type_recipient_reltime_wallet_address"
+        android:textColor="@color/white80"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvToken" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_walletAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/wallet_address"
+        android:textColor="@color/white80"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_regular"
+        app:layout_constraintStart_toStartOf="@+id/appCompatTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />
+
+    <EditText
+        android:id="@+id/edtWalletAddress"
+        style="@style/EditTextDefaultSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/dp50"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginTop="@dimen/dp12"
+        android:layout_weight="1"
+        android:background="@drawable/basic_corner"
+        android:hint="@string/enter_your_wallet_address"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white40"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintStart_toStartOf="@+id/tv_walletAddressTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tv_walletAddressTitle" />
+
+
+    <Button
+        android:id="@+id/btnContinue"
+        style="@style/BoldButtonHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp42"
+        android:maxLength="200"
+        android:text="@string/continue_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

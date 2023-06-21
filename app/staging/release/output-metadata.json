@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.accubits.reltime",
+  "variantName": "stagingRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 20230228,
+      "versionName": "2.3.17",
+      "outputFile": "reltime-v201.apk"
+    }
+  ],
+  "elementType": "File"
+}

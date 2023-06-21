@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".views.lend.LendSuccessActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView30"
+                android:layout_width="@dimen/dp170"
+                android:layout_height="@dimen/dp170"
+                android:layout_marginTop="@dimen/dp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/lend_created_success_icon" />
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/inter_semibold"
+                android:gravity="center"
+                android:paddingStart="@dimen/dp24"
+                android:paddingEnd="@dimen/dp24"
+                android:text="@string/your_loan_has_been_listed_on_the_marketplace"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView30" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout20"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="@dimen/dp16"
+                android:background="@drawable/rectangle_without_line"
+                android:paddingStart="@dimen/dp16"
+                android:paddingTop="@dimen/dp8"
+                android:paddingEnd="@dimen/dp16"
+                android:paddingBottom="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView66">
+
+                <TextView
+                    android:id="@+id/tvListing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/loan_id_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvListing"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvListing"
+                    app:layout_constraintTop_toTopOf="@+id/tvListing" />
+
+
+                <TextView
+                    android:id="@+id/tvLendToTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/lent_to_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvListing" />
+
+                <TextView
+                    android:id="@+id/tvLendTo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLendToTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLendToTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvLendToTitle" />
+
+
+                <TextView
+                    android:id="@+id/tvMonthlyPaymentTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/monthly_installment_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLendToTitle" />
+
+                <TextView
+                    android:id="@+id/tvMonthlyPayment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvMonthlyPaymentTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvMonthlyPaymentTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvMonthlyPaymentTitle" />
+
+
+                <TextView
+                    android:id="@+id/tvLoanAmountTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/loan_amount_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMonthlyPaymentTitle" />
+
+                <TextView
+                    android:id="@+id/tvLoanAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLoanAmountTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLoanAmountTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvLoanAmountTitle" />
+
+                <TextView
+                    android:id="@+id/tvInterestRateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/interest__rate_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLoanAmountTitle" />
+
+                <TextView
+                    android:id="@+id/tvInterestRate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvInterestRateTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvInterestRateTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvInterestRateTitle" />
+
+
+                <TextView
+                    android:id="@+id/tvLoanTermTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/loan_term_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvInterestRateTitle" />
+
+                <TextView
+                    android:id="@+id/tvLoanTerm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvLoanTermTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvLoanTermTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvLoanTermTitle" />
+
+
+                <TextView
+                    android:id="@+id/tvPayBackTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/payback_period_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvLoanTermTitle" />
+
+                <TextView
+                    android:id="@+id/tvPayBack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/every_month"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPayBackTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvPayBackTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvPayBackTitle" />
+
+
+                <TextView
+                    android:id="@+id/tvCollateralTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/collateral_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPayBackTitle" />
+
+                <TextView
+                    android:id="@+id/tvCollateral"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvCollateralTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvCollateralTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvCollateralTitle" />
+
+
+                <TextView
+                    android:id="@+id/tvDateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp12"
+                    android:fontFamily="@font/inter_light"
+                    android:text="@string/date_time_column"
+                    android:textColor="@color/white40"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvCollateralTitle" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:textColor="@color/white80"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvDateTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvDateTitle"
+                    app:layout_constraintTop_toTopOf="@+id/tvDateTitle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp24"
+                android:layout_marginBottom="@dimen/dp90"
+                android:id="@+id/llShare"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout20">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_share_details" />
+
+                <TextView
+                    android:id="@+id/tvShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dp12"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="center_vertical|end"
+                    android:padding="@dimen/dp12"
+                    android:text="@string/share_loan_receipt"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp16" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_GotoWallet"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp16"
+        android:text="@string/go_to_my_loan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

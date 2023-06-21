@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.v2.login.fragments.LoginPINFragment">
+
+
+    <TextView
+        android:id="@+id/tvLoginPIN"
+        android:fontFamily="@font/inter_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp24"
+        android:layout_marginTop="24dp"
+        android:letterSpacing="0.2"
+        android:text="@string/pin"
+        android:textColor="@color/white80"
+        android:textAllCaps="true"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.accubits.reltime.utils.customView.PinView
+        android:id="@+id/pinView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pinWidth="65dp"
+        app:pinHeight="50dp"
+        app:splitWidth="@dimen/dp16"
+        app:pinLength="4"
+        app:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginPIN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cursorVisible="true"
+        app:forceKeyboard="false"
+        app:inputType="number"
+        app:password="true"/>
+    <TextView
+        android:id="@+id/tvForgotLoginPIN"
+        android:fontFamily="@font/inter_light"
+        android:textSize="@dimen/sp12"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginEnd="@dimen/dp16"
+        android:text="@string/forgot_reltime_pin"
+        app:layout_constraintEnd_toEndOf="@+id/pinView"
+        app:layout_constraintTop_toBottomOf="@+id/pinView" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tvForgotLoginPIN"
+        app:layout_constraintStart_toStartOf="@+id/tvForgotLoginPIN"
+        app:layout_constraintTop_toBottomOf="@+id/tvForgotLoginPIN" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

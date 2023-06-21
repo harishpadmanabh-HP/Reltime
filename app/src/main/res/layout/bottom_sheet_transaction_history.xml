@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#1D2435">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp15"
+        android:paddingTop="@dimen/dp16"
+        android:paddingBottom="@dimen/dp16">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:srcCompat="@drawable/ic_close" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp14"
+            android:text="@string/filter_by"
+            android:textColor="@color/whitepure"
+            android:textSize="@dimen/dimen_16sp"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintStart_toEndOf="@+id/ivClose"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp14"
+            android:paddingEnd="@dimen/dp8"
+            android:text="@string/clear_all"
+            android:textColor="#387DFF"
+            android:textSize="@dimen/sp14"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFilterType"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:paddingTop="@dimen/dp9"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp16"
+        android:paddingBottom="@dimen/dp10"
+        android:text="@string/transaction_type"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutTitle" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkReceived"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp16"
+        android:paddingEnd="@dimen/dp16"
+        android:buttonTint="@color/app_light_blue"
+        android:button="@null"
+        android:drawableTint="@color/app_light_blue"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/received"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFilterType" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkDeposit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        android:paddingEnd="@dimen/dp16"
+        android:buttonTint="@color/app_light_blue"
+        android:button="@null"
+        android:drawableTint="@color/app_light_blue"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/deposited"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkReceived" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkTransferred"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        android:paddingEnd="@dimen/dp16"
+        android:buttonTint="@color/app_light_blue"
+        android:button="@null"
+        android:drawableTint="@color/app_light_blue"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/transferred"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkDeposit" />
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkMoved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        android:paddingEnd="@dimen/dp16"
+        android:buttonTint="@color/app_light_blue"
+        android:button="@null"
+        android:drawableTint="@color/app_light_blue"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/moved"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkTransferred" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkBridge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        android:paddingEnd="@dimen/dp16"
+        android:buttonTint="@color/app_light_blue"
+        android:button="@null"
+        android:drawableTint="@color/app_light_blue"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/bridged"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkMoved" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkSwap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        android:paddingEnd="@dimen/dp16"
+        android:buttonTint="@color/app_light_blue"
+        android:button="@null"
+        android:drawableTint="@color/app_light_blue"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/swapped"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBridge" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/checkPaid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp12"
+        android:paddingEnd="@dimen/dp16"
+        android:buttonTint="@color/app_light_blue"
+        android:button="@null"
+        android:drawableTint="@color/app_light_blue"
+        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/paid"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkSwap" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDateType"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:paddingTop="@dimen/dp9"
+        android:layout_marginTop="@dimen/dp16"
+        android:background="#242E45"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp16"
+        android:paddingBottom="@dimen/dp10"
+        android:text="@string/date"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkPaid" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/flexBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:alignItems="flex_start"
+        app:alignContent="flex_start"
+        app:justifyContent="flex_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateType"
+        android:paddingStart="@dimen/dp12"
+        android:paddingEnd="@dimen/dp12">
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvLastWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/last_week"
+            android:paddingStart="@dimen/dp17"
+            android:paddingEnd="@dimen/dp17"
+            android:paddingTop="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium"
+            android:layout_marginTop="@dimen/dp19"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvLastMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/last_month"
+            android:paddingStart="@dimen/dp17"
+            android:paddingEnd="@dimen/dp17"
+            android:paddingTop="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium"
+            android:layout_marginTop="@dimen/dp19"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvLastThreeMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/last_three_month"
+            android:paddingStart="@dimen/dp17"
+            android:paddingEnd="@dimen/dp17"
+            android:paddingTop="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium"
+            android:layout_marginTop="@dimen/dp19"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvLastSixMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/last_six_month"
+            android:paddingStart="@dimen/dp17"
+            android:paddingEnd="@dimen/dp17"
+            android:paddingTop="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium"
+            android:layout_marginTop="@dimen/dp19"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvLastYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/last_year"
+            android:paddingStart="@dimen/dp17"
+            android:paddingEnd="@dimen/dp17"
+            android:paddingTop="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium"
+            android:layout_marginTop="@dimen/dp19"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/tvAllTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/filter_radio_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/all_time"
+            android:paddingStart="@dimen/dp17"
+            android:paddingEnd="@dimen/dp17"
+            android:paddingTop="@dimen/dp8"
+            android:paddingBottom="@dimen/dp8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp12"
+            app:fontFamily="@font/inter_medium"
+            android:layout_marginTop="@dimen/dp19"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnApply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flexBox"
+        android:layout_marginTop="@dimen/dp23"
+        android:layout_marginStart="@dimen/dp14"
+        android:layout_marginEnd="@dimen/dp14"
+        android:layout_marginBottom="@dimen/dp23"
+        android:text="@string/apply_now"
+        style="@style/BoldButtonHigh"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

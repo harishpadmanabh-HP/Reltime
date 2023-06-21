@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/basic_corner"
+    android:paddingBottom="@dimen/dp21">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvConfirmPaymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp21"
+        android:text="@string/lbl_tvConfirmPaymentTitle"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_16sp"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="@dimen/dp24"
+        android:layout_height="@dimen/dp24"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:padding="@dimen/dp4"
+        android:tint="#7CA8E2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close_24px" />
+
+    <View
+        android:id="@+id/div1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginTop="@dimen/dp13"
+        android:background="#80838383"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmPaymentTitle" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBorrowedAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:text="@string/lbl_tvBorrowedAmount"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBorrowedAmountValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/tvBorrowedAmount"
+        app:layout_constraintTop_toBottomOf="@+id/tvBorrowedAmount"
+        tool:text="RTO (€) 9,999.00" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMonthlyInstallments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp17"
+        android:text="@string/lbl_tvMonthlyInstallments"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp12"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMonthlyInstallmentsValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="@dimen/dp12"
+        android:textColor="@color/color_CCF9F9F9"
+        android:textSize="@dimen/sp16"
+        android:gravity="end"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toEndOf="@+id/tvBorrowedAmountValue"
+        app:layout_constraintEnd_toEndOf="@+id/tvMonthlyInstallments"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthlyInstallments"
+        tool:text="RTO (€) 9,999.00" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSelectAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp17"
+        android:text="@string/select_account"
+        android:textColor="@color/color_99F9F9F9"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBorrowedAmountValue" />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vSelectedAccount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="@dimen/dp10"
+        android:layout_marginStart="@dimen/dp17"
+        android:layout_marginEnd="@dimen/dp17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectAccount"
+        android:background="@drawable/select_account_bg">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAccountName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:text="Account Name1"
+            android:textColor="@color/color_CCF9F9F9"
+            android:textSize="@dimen/sp14"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvRTO"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRTO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp4"
+            android:text="RTO (€)"
+            android:textColor="@color/color_CCF9F9F9"
+            android:textSize="10sp"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBalance"
+            app:layout_constraintEnd_toStartOf="@+id/tvBalance" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp15"
+            android:text="123.0"
+            android:textColor="@color/color_CCF9F9F9"
+            android:textSize="@dimen/sp14"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/dp14"
+            android:layout_height="@dimen/dp14"
+            android:layout_marginEnd="@dimen/dp15"
+            android:rotation="180"
+            android:tint="#607289"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPay"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/dp26"
+        android:text="@string/proceed_to_pay"
+        app:layout_constraintTop_toBottomOf="@+id/vSelectedAccount"
+        app:layout_constraintEnd_toEndOf="@+id/tvMonthlyInstallments"
+        app:layout_constraintStart_toStartOf="@+id/tvBorrowedAmount"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

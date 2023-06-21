@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_tab" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="Confirmation Message"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/sp18"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vDiv"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dp18"
+        android:background="#4F5A74"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp30"
+        android:text="Losing the secret Reltime Recovery Key may lead to the loss of funds forever. Exposing or sharing the key to anybody could lead to theft. Keeping the key safe and secure is therefore of utmost importance."
+        android:textColor="#D4D4D4"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_regular"
+        app:layout_constraintEnd_toEndOf="@+id/vDiv"
+        app:layout_constraintStart_toStartOf="@+id/vDiv"
+        app:layout_constraintTop_toBottomOf="@+id/vDiv" />
+
+
+
+    <Button
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="@dimen/dp15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/dp35"
+        android:layout_marginEnd="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp13"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btnContinue"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:text="Agree and continue"
+       />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

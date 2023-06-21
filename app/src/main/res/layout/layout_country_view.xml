@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_country_parent_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_gray"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp20">
+
+    <androidx.emoji.widget.EmojiTextView
+        android:id="@+id/ej_tv"
+        style="@style/MediumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="@dimen/sp14" />
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/basic_corner"
+    android:layout_margin="@dimen/dp24"
+    android:paddingStart="@dimen/dp16"
+    android:paddingEnd="@dimen/dp16"
+    android:paddingTop="@dimen/dp16">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update_available"
+        android:textColor="@color/app_light_blue"
+        android:textSize="@dimen/sp18"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/keep_reltime_updated_to_access_new_features_and_design_improvements"
+        android:textColor="@color/white80"
+        android:layout_marginTop="@dimen/dp16"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoThanks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_thanks"
+        android:textColor="@color/white80"
+        android:background="?attr/selectableItemBackground"
+        android:textSize="@dimen/sp16"
+        android:padding="@dimen/dp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toStartOf="@+id/tvUpdate"
+        app:layout_constraintTop_toTopOf="@+id/tvUpdate"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/update"
+        android:textColor="@color/app_light_blue"
+        android:layout_marginTop="@dimen/dp16"
+        android:textSize="@dimen/sp16"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/dp16"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesc"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

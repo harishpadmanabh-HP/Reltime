@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".mnemonic.MnemonicActivity">
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp10"
+        android:src="@drawable/ic_back_png"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp13"
+        android:text="Secure your Reltime Wallet now!"
+        android:textColor="#F9F9F9"
+        android:textSize="@dimen/sp20"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintStart_toStartOf="@+id/iv_back"
+        app:layout_constraintTop_toBottomOf="@+id/iv_back" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+        android:layout_marginEnd="@dimen/dp16"
+        android:textColor="#F9F9F9"
+        app:fontFamily="@font/inter_regular"
+        android:layout_marginTop="@dimen/dp10"
+        android:alpha=".6"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        android:text="@string/this_is_my_reltime_recovery_key_i_will_be_asked_to_confirm_it_in_the_next_step"
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp32"
+        android:layout_marginEnd="@dimen/dp16"
+        android:padding="@dimen/dp16"
+        android:background="@drawable/permission_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description"
+        android:id="@+id/rvMnemonics"/>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/blurView"
+       android:layout_width="0dp"
+       android:layout_height="0dp"
+       android:background="@drawable/ic_blur_bg"
+       app:layout_constraintStart_toStartOf="@+id/rvMnemonics"
+       app:layout_constraintEnd_toEndOf="@+id/rvMnemonics"
+       app:layout_constraintBottom_toBottomOf="@+id/rvMnemonics"
+       app:layout_constraintTop_toTopOf="@+id/rvMnemonics"
+       >
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/ivLock"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:srcCompat="@drawable/ic_lock"
+           app:layout_constraintVertical_chainStyle="packed"
+           android:layout_width="@dimen/dp23"
+           app:layout_constraintBottom_toTopOf="@+id/tvLockDescription"
+           android:layout_height="@dimen/dp23"/>
+       <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/tvLockDescription"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:fontFamily="@font/inter_medium"
+           android:textColor="@color/white"
+           android:textSize="@dimen/dimen_16sp"
+           android:layout_marginTop="11dp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/ivLock"
+           android:text="@string/tap_here_to_show_my_nreltime_recovery_key"/>
+       
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCopy"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvMnemonics"
+        android:layout_marginTop="@dimen/dp28"
+        android:text="@string/copy_your_reltime_recovery_key"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_medium"
+        android:background="@drawable/back_button_yellow"
+        android:paddingTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10"
+        android:paddingStart="@dimen/dp15"
+        android:paddingEnd="@dimen/dp15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWarningTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCopy"
+        android:layout_marginTop="@dimen/dp24"
+        android:visibility="gone"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:text="@string/critical_information"
+        android:textAllCaps="true"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp18"
+        app:fontFamily="@font/inter_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWarningDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWarningTitle"
+        android:layout_marginTop="@dimen/dp12"
+        android:text="@string/mnemonics_warning_desc"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        android:visibility="gone"
+        android:lineSpacingMultiplier="1.4"
+        app:fontFamily="@font/inter_medium"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:visibility="gone"
+       app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/dp16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/btnContinue"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:text="@string/copied_and_continue"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background">
+
+    <EditText
+        android:id="@+id/edPopupSearchView"
+        style="@style/EditTextDefault"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginTop="@dimen/dp25"
+        android:background="@drawable/basic_corner"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="@dimen/dp15"
+        android:hint="Search countries"
+        android:paddingStart="@dimen/dp20"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/lvCountrylist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp16"
+        android:paddingBottom="@dimen/dp30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edPopupSearchView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/layout_country_view" />
+
+    <TextView
+        android:id="@+id/tvError"
+        style="@style/MediumTextView"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="No items"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

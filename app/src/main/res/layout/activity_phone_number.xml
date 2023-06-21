@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".activity.v2.transfer.PhoneNumberActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tvToolbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/darkBlack"
+        android:elevation="@dimen/dp2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:layout_marginStart="@dimen/dp10"
+            android:padding="@dimen/dp8"
+            android:scaleType="fitXY"
+            android:tint="@color/blue1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_number"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp16"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/ivBack"
+            app:layout_constraintStart_toEndOf="@+id/ivBack"
+            app:layout_constraintTop_toTopOf="@+id/ivBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvToolbar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginEnd="@dimen/dp16"
+            android:text="@string/type_in_or_choose_any_number_to_transfer_rto"
+            android:textColor="@color/white80"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvPhoneNumberTitle"
+            style="@style/LightTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp24"
+            android:layout_marginEnd="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp24"
+            android:letterSpacing="0.2"
+            android:text="@string/settings_profile_phone_label"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp12"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/edSearchView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp50"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginEnd="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp100"
+            android:background="@drawable/basic_corner"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumberTitle">
+
+            <androidx.emoji.widget.EmojiTextView
+                android:id="@+id/tvEmoji"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp10"
+                android:background="@null"
+                android:gravity="center"
+                android:drawableEnd="@drawable/ic_dropdown_blue"
+                android:drawablePadding="@dimen/dp8"
+                android:focusable="false"
+                android:fontFamily="@font/inter_semibold"
+                android:hint="+1"
+                android:inputType="none"
+                android:letterSpacing="0.1"
+                android:minWidth="@dimen/dp40"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white40"
+                android:textSize="@dimen/sp14" />
+
+
+            <View
+                android:id="@+id/v_divider"
+                android:layout_width="@dimen/dp1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@color/divider_gray" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/EditTextDefaultSignup"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp0"
+                android:layout_marginEnd="@dimen/dp0"
+                android:paddingStart="@dimen/dp10"
+                android:paddingEnd="@dimen/dp10"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:background="@null"
+                android:digits="+0123456789"
+                android:hint="@string/enter_your_phone_number"
+                android:inputType="phone"
+                android:letterSpacing="0.1"
+                android:textColorHint="@color/white40"
+                android:textSize="@dimen/sp14" />
+
+            <ImageView
+                android:id="@+id/iv_contactList"
+                android:layout_width="@dimen/dp24"
+                android:layout_height="@dimen/dp24"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginStart="@dimen/dp10"
+                android:src="@drawable/ic_contact_list" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_progress"
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/cl_contact"
+            app:layout_constraintBottom_toBottomOf="@+id/cl_contact"
+            app:layout_constraintEnd_toEndOf="@+id/edSearchView"
+            app:layout_constraintStart_toStartOf="@+id/edSearchView" >
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                app:layout_constraintEnd_toStartOf="@+id/tvLoading"
+                android:indeterminateTint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/loading"
+                android:textColor="@color/white80"
+                android:textSize="@dimen/sp14"
+                android:id="@+id/tvLoading"
+                app:layout_constraintBottom_toBottomOf="@+id/progressBar2"
+                app:layout_constraintStart_toEndOf="@+id/progressBar2"
+                app:layout_constraintTop_toTopOf="@+id/progressBar2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="invisible"
+            android:id="@+id/cl_contact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp16"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginEnd="@dimen/dp16"
+            android:layout_marginBottom="@dimen/dp100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edSearchView">
+
+            <com.accubits.reltime.utils.UserProfileImageView
+                android:id="@+id/ivuserprofileimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp12"
+                android:layout_marginBottom="@dimen/dp12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"/>
+
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="@dimen/dp12"
+                android:fontFamily="@font/inter_semibold"
+                tools:text="Alexander Josh"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintEnd_toStartOf="@+id/tv_tapToChoose"
+                app:layout_constraintBottom_toTopOf="@+id/tv_userNumber"
+                app:layout_constraintStart_toEndOf="@+id/ivuserprofileimage"
+                app:layout_constraintTop_toTopOf="@+id/ivuserprofileimage" />
+
+
+            <TextView
+                android:id="@+id/tv_userNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="99896 986923"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintBottom_toBottomOf="@+id/ivuserprofileimage"
+                app:layout_constraintEnd_toEndOf="@+id/tv_username"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_username"
+                app:layout_constraintTop_toBottomOf="@+id/tv_username"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_tapToChoose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/tap_to_choose"
+                android:textColor="@color/darkblue"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

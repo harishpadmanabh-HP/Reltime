@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp5"
+    android:background="@drawable/basic_corner"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp25">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp25"
+        android:fontFamily="@font/inter_semibold"
+        android:gravity="center"
+        android:id="@+id/tvTitle"
+        android:text="Wallet Address"
+        android:textColor="@color/white60" />
+
+    <TextView
+        android:id="@+id/tvWalletAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:text="asdasdasdadasdadachgsv hasdasdhasjdasbdasdasdasdasdadasdasd"
+        android:textColor="@color/white60" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@color/white20" />
+
+    <TextView
+        android:id="@+id/tvCopyAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        android:text="Copy Address"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/sp20" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@color/white20" />
+
+    <TextView
+        android:id="@+id/tvSendAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        android:text="Send Address"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/sp20" />
+
+
+</LinearLayout>

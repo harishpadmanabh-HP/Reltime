@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".activity.notification.NotificationDetailsActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_default_bg"
+        android:paddingBottom="@dimen/dp10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp10"
+            android:src="@drawable/ic_back_png"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            style="@style/BoldTextViewHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp22"
+            android:gravity="center"
+            android:text="@string/notification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:id="@+id/ivContainer"
+        android:layout_width="@dimen/dp30"
+        android:layout_height="@dimen/dp30"
+        android:layout_marginStart="@dimen/dp28"
+        android:layout_marginTop="@dimen/dp15"
+        android:background="@drawable/circluar_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout12">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivUserIcon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundImageStyle" />
+
+        <TextView
+            android:id="@+id/tvLogoChar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="A"
+            android:textSize="@dimen/sp12"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_notification_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp12"
+        android:layout_marginEnd="@dimen/dp28"
+        android:ellipsize="end"
+        android:fontFamily="@font/inter_medium"
+        android:maxLines="2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivContainer"
+        app:layout_constraintTop_toTopOf="@+id/ivContainer"
+        tools:text=" This is the simple text." />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/accountGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="tv_notification_title,ivContainer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_account_name"
+        android:textColor="@color/white90"
+        android:textSize="@dimen/sp14"
+        android:layout_marginTop="@dimen/dp13"
+        tools:text="Account name: Timemake"
+        app:layout_constraintEnd_toEndOf="@+id/tv_notification_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_notification_title"
+        app:layout_constraintTop_toBottomOf="@+id/accountGuideLine"
+        android:fontFamily="@font/inter_regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_created_by"
+        android:textColor="@color/white90"
+        android:textSize="@dimen/sp14"
+        tools:text="Account name: Timemake"
+        app:layout_constraintEnd_toEndOf="@+id/tv_notification_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_notification_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_account_name"
+        android:fontFamily="@font/inter_regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_created_date"
+        android:textColor="@color/white90"
+        android:textSize="@dimen/sp14"
+        tools:text="Account name: Timemake"
+        app:layout_constraintEnd_toEndOf="@+id/tv_notification_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_notification_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_created_by"
+        android:fontFamily="@font/inter_regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_reject"
+        style="@style/BoldButtonWithBorder"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/dp28"
+        android:layout_marginTop="@dimen/dp23"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="Reject"
+        app:layout_constraintEnd_toStartOf="@+id/bt_accept"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_created_date" />
+
+
+    <Button
+        android:id="@+id/bt_accept"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="@dimen/dp28"
+        android:layout_marginBottom="16dp"
+        android:text="Accept"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_reject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bt_reject"
+        app:layout_constraintTop_toTopOf="@+id/bt_reject" />
+</androidx.constraintlayout.widget.ConstraintLayout>

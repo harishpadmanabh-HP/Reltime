@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable name="showEmptyView" type="Boolean"/>
+        <variable name="showProgressView" type="Boolean"/>
+        <variable name="showErrorView" type="Boolean"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- VIEW TO DISPLAY FULL SCREEN ERROR -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility='@{safeUnbox(showErrorView) ? View.VISIBLE : View.GONE, default=gone}'
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvErrorMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/btnText"
+                tools:text="Error In Fetching Data"
+                android:layout_marginTop="@dimen/dp16"
+                android:textSize="@dimen/dimen_18sp"
+                android:fontFamily="@font/inter_medium"
+                android:textStyle="normal"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnText"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvErrorMessage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="@font/inter_medium"
+                android:textStyle="normal"
+                android:letterSpacing="0"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- VIEW TO DISPLAY IN SCREEN LOADER  -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility='@{safeUnbox(showProgressView) ? View.VISIBLE : View.GONE, default=gone}'
+            >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tvLoadingMessage"
+                app:layout_constraintVertical_chainStyle="packed"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvLoadingMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Fetching Data From Server..."
+                android:textSize="@dimen/sp14"
+                android:fontFamily="@font/inter_medium"
+                android:textStyle="normal"
+                android:textColor="@color/white"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- VIEW TO DISPLAY IN SCREEN EMPTY VIEW -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility='@{safeUnbox(showEmptyView) ? View.VISIBLE : View.GONE, default=gone}'
+
+            >
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvEmptyMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="NO DATA AVAILABLE"
+                android:textSize="@dimen/sp18"
+                android:fontFamily="@font/inter_medium"
+                android:textStyle="normal"
+                android:layout_marginTop="@dimen/dimen_16dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

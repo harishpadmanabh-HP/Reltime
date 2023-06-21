@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingStart="@dimen/dp8"
+    android:paddingEnd="@dimen/dp8"
+    android:paddingTop="@dimen/dp3"
+    android:paddingBottom="@dimen/dp3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNumber"
+        android:layout_width="@dimen/dp24"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textColor="@color/white40"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMnemonic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp14"
+        app:fontFamily="@font/inter_medium"
+        app:layout_constraintTop_toTopOf="@+id/tvNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNumber"
+        app:layout_constraintStart_toEndOf="@+id/tvNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="intergalactic planetary boys profile worth understand while brass newspaper random stand helicopter" />
+</androidx.constraintlayout.widget.ConstraintLayout>

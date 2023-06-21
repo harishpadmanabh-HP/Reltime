@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    android:fillViewport="true"
+    tools:context=".activity.jointAccount.EditJointActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dp2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp60">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_title_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_default_bg"
+                android:paddingBottom="@dimen/dp10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp15"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:src="@drawable/ic_back_png"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView100"
+                    style="@style/HeadingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp22"
+                    android:gravity="center"
+                    android:text="@string/edit_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp15"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    android:background="@drawable/ic_round_button_bg"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingTop="@dimen/dp18"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingBottom="@dimen/dp28"
+                    android:src="@drawable/ic_delete"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_signup_desc"
+                style="@style/BasicTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_marginEnd="@dimen/dp15"
+                android:text="@string/joint_account_user_s"
+                android:textSize="@dimen/dp_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_title_container" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginEnd="@dimen/dp16"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="#222A35"
+                app:cardElevation="@dimen/dp0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_signup_desc">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvUsersList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_line"
+                    android:padding="@dimen/dp1"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/card_account_users" />
+
+                <TextView
+                    android:id="@+id/emptyList"
+                    style="@style/LightTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp30"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:letterSpacing="0.2"
+                    android:text="Users list empty"
+                    android:textSize="@dimen/sp12" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_accountNameLabel"
+                style="@style/LightTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp32"
+                android:letterSpacing="0.2"
+                android:text="@string/account_name"
+                android:textAllCaps="true"
+                android:textSize="@dimen/sp12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView3" />
+
+            <EditText
+                android:id="@+id/ed_accountName"
+                style="@style/EditTextLoan"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/dp5"
+                android:maxLength="200"
+                android:textColorHint="@color/white40"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_accountNameLabel" />
+
+
+            <TextView
+                android:id="@+id/tv_accountName_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_light"
+                android:textColor="@color/red"
+                android:textSize="@dimen/sp12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/ed_accountName"
+                app:layout_constraintStart_toStartOf="@+id/ed_accountName"
+                app:layout_constraintTop_toBottomOf="@+id/ed_accountName" />
+
+            <TextView
+                android:id="@+id/btAddNewUser"
+                style="@style/BasicTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp32"
+                android:drawablePadding="10dp"
+                android:letterSpacing="0.1"
+                android:text="@string/add_new_user"
+                android:textSize="@dimen/sp12"
+                app:drawableStartCompat="@drawable/ic_plus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_accountName_error" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNewUsersList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp16"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginEnd="@dimen/dp16"
+                android:background="@drawable/rectangle_line"
+                android:padding="@dimen/dp1"
+                android:paddingTop="@dimen/dp15"
+                android:paddingBottom="@dimen/dp15"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btAddNewUser"
+                tools:itemCount="2"
+                tools:listitem="@layout/card_account_users" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btSave"
+        style="@style/BoldButtonHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="40dp"
+        android:maxLength="200"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

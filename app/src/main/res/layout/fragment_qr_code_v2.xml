@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ic_background"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/layoutTitle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp16"
+        android:paddingBottom="@dimen/dp24"
+        android:background="@drawable/bg_qr_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQrCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp30"
+            android:text="@string/my_reltime_qr_code"
+            android:textColor="@color/whitepure"
+            android:textSize="@dimen/sp14"
+            app:fontFamily="@font/inter_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivQrCode"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp0"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_marginStart="@dimen/dp36"
+            android:layout_marginEnd="@dimen/dp36"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvQrCode" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivQrCode" />
+
+        <Button
+            android:id="@+id/btnDownload"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginEnd="@dimen/dp8"
+            android:background="@drawable/background_transperent_rectangle_accent_border"
+            android:paddingStart="@dimen/dp34"
+            android:paddingTop="@dimen/dp11"
+            android:paddingEnd="@dimen/dp34"
+            android:paddingBottom="@dimen/dp10"
+            android:text="@string/download"
+            android:textAllCaps="false"
+            android:textColor="@color/app_light_blue"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/ivQrCode" />
+
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="@dimen/dp150"
+            android:layout_height="@dimen/dp48"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp24"
+            android:background="@drawable/background_transperent_rectangle_accent_border"
+            android:paddingStart="@dimen/dp34"
+            android:paddingTop="@dimen/dp11"
+            android:paddingEnd="@dimen/dp34"
+            android:paddingBottom="@dimen/dp10"
+            android:text="@string/share"
+            android:textAllCaps="false"
+            android:textColor="@color/app_light_blue"
+            android:textSize="@dimen/sp13"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/ivQrCode" />
+
+        <View
+            android:id="@+id/lineDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/dp14"
+            android:layout_marginTop="@dimen/dp24"
+            android:layout_marginEnd="@dimen/dp14"
+            android:background="#20293D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnShare" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWalletIdTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/my_reltime_wallet_iD"
+            android:textColor="@color/whitepure"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineDivider" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWalletId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginBottom="@dimen/dp30"
+            android:layout_marginStart="@dimen/dp16"
+            app:layout_constrainedWidth="true"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/white80"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toStartOf="@+id/ivCopyWalletId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWalletIdTitle"
+            tools:text="123124234234234123124234234234123124234234234" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCopyWalletId"
+            android:layout_width="@dimen/dp18"
+            android:layout_height="@dimen/dp18"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWalletId"
+            app:layout_constraintStart_toEndOf="@+id/tvWalletId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWalletIdTitle"
+            app:srcCompat="@drawable/ic_copy" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPhoneNumberTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/my_phone_number"
+            android:textColor="@color/whitepure"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWalletId" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginBottom="@dimen/dp30"
+            android:layout_marginStart="@dimen/dp16"
+            app:layout_constrainedWidth="true"
+            android:fontFamily="@font/inter_regular"
+            android:textColor="@color/white80"
+            android:textSize="@dimen/sp14"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toStartOf="@+id/ivCopyPhoneNumber"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumberTitle"
+            tools:text="123124234234234123124234234234123124234234234" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCopyPhoneNumber"
+            android:layout_width="@dimen/dp18"
+            android:layout_height="@dimen/dp18"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp16"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPhoneNumber"
+            app:layout_constraintStart_toEndOf="@+id/tvPhoneNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumberTitle"
+            app:srcCompat="@drawable/ic_copy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1623"
+    tools:context=".activity.qrcode.QRCodeActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:translationZ="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp3">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15"
+            android:layout_marginEnd="@dimen/dp13"
+            android:background="@drawable/bg_qr_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingBottom="@dimen/dp20">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQrCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:text="@string/my_reltime_qr_code"
+                android:textColor="@color/whitepure"
+                android:textSize="@dimen/sp14"
+                app:fontFamily="@font/inter_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivQrCode"
+                android:layout_width="@dimen/dp250"
+                android:layout_height="@dimen/dp250"
+                android:layout_marginTop="@dimen/dp16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvQrCode" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivQrCode" />
+
+            <Button
+                android:id="@+id/btnDownload"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginTop="@dimen/dp17"
+                android:layout_marginEnd="@dimen/dp8"
+                android:background="@drawable/filter_bg"
+                android:paddingStart="@dimen/dp34"
+                android:paddingTop="@dimen/dp11"
+                android:paddingEnd="@dimen/dp34"
+                android:paddingBottom="@dimen/dp10"
+                android:text="@string/download"
+                android:textAllCaps="false"
+                android:textColor="@color/app_light_blue"
+                android:textSize="@dimen/sp13"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/ivQrCode" />
+
+            <Button
+                android:id="@+id/btnShare"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp48"
+                android:layout_marginStart="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp17"
+                android:background="@drawable/filter_bg"
+                android:paddingStart="@dimen/dp34"
+                android:paddingTop="@dimen/dp11"
+                android:paddingEnd="@dimen/dp34"
+                android:paddingBottom="@dimen/dp10"
+                android:text="@string/share"
+                android:textAllCaps="false"
+                android:textColor="@color/app_light_blue"
+                android:textSize="@dimen/sp13"
+                app:layout_constraintStart_toEndOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/ivQrCode" />
+
+            <View
+                android:id="@+id/lineDivider"
+                android:layout_width="0dp"
+                android:layout_height="1px"
+                android:layout_marginStart="@dimen/dp14"
+                android:layout_marginTop="@dimen/dp24"
+                android:layout_marginEnd="@dimen/dp14"
+                android:background="@color/white20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnShare" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWalletIdTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/my_reltime_wallet_iD"
+                android:textColor="@color/whitepure"
+                android:textSize="@dimen/sp14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineDivider" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutWalletId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tvWalletIdTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvWalletIdTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvWalletIdTitle"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvWalletId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/whitepure"
+                    android:textSize="@dimen/sp16"
+                    android:gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawableEnd="@drawable/ic_copy"
+                    android:drawablePadding="@dimen/dp10"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCopyWalletId"
+                    android:layout_width="@dimen/dp18"
+                    android:layout_height="@dimen/dp18"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/dp7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvWalletId"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_copy" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPhoneNumberTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:text="@string/my_phone_number"
+                android:textColor="@color/whitepure"
+                android:textSize="@dimen/sp14"
+                android:layout_marginTop="@dimen/dp20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutWalletId" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/tvPhoneNumberTitle"
+                app:layout_constraintStart_toStartOf="@+id/tvPhoneNumberTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumberTitle"
+                android:layout_marginTop="@dimen/dp5"
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/whitepure"
+                    android:textSize="@dimen/sp16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawableEnd="@drawable/ic_copy"
+                    android:drawablePadding="@dimen/dp10"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCopyPhoneNumber"
+                    android:layout_width="@dimen/dp18"
+                    android:layout_height="@dimen/dp18"
+                    android:layout_marginStart="@dimen/dp7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvPhoneNumber"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_copy"
+                    android:visibility="gone"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/dp30">
+
+            <View
+                android:id="@+id/viewGray"
+                android:layout_width="@dimen/dp10"
+                android:layout_height="@dimen/dp10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/viewBlue"
+                android:background="@drawable/ic_dot"
+                />
+
+            <View
+                android:id="@+id/viewBlue"
+                android:layout_width="@dimen/dp10"
+                android:layout_height="@dimen/dp10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/viewGray"
+                android:background="@drawable/ic_dot"
+                app:tint="@color/linear_gradient_top"
+                android:layout_marginStart="@dimen/dp10"
+                android:backgroundTint="@color/linear_gradient_top"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->

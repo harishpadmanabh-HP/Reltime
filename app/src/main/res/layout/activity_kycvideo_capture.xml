@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.kyc.KYCVideoCaptureActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdVertical40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <TextView
+        android:id="@+id/tvTimerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@drawable/basic_corner"
+        android:backgroundTint="@color/card_color"
+        android:drawableLeft="@drawable/ic_record"
+        android:drawablePadding="@dimen/dp10"
+        android:gravity="center"
+        android:paddingStart="@dimen/dp5"
+        android:paddingTop="@dimen/dp5"
+        android:paddingEnd="@dimen/dp20"
+        android:paddingBottom="@dimen/dp5"
+        android:text="00:15"
+        android:textColor="@color/white80"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdVertical60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdVertical80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <ImageView
+        android:id="@+id/ivDeleteRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:layout_constraintBottom_toBottomOf="@id/ivStartRecord"
+        app:layout_constraintEnd_toEndOf="@id/gdVertical80"
+        app:layout_constraintStart_toStartOf="@id/gdVertical60"
+        app:layout_constraintTop_toTopOf="@id/ivStartRecord" />
+
+    <ImageView
+        android:id="@+id/ivSelectVideo"
+        android:layout_width="@dimen/dp40"
+        android:layout_height="@dimen/dp40"
+        android:src="@drawable/ic_check_continue"
+        app:layout_constraintBottom_toBottomOf="@id/ivStartRecord"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@id/gdVertical80"
+        app:layout_constraintTop_toTopOf="@id/ivStartRecord" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivStartRecord"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dp40"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gdVertical60"
+        app:layout_constraintStart_toStartOf="@id/gdVertical40" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/basic_cornerx">
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/BoldTextViewHigh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp16"/>
+
+    <ImageView
+        android:layout_width="@dimen/dp30"
+        android:layout_height="@dimen/dp30"
+        android:src="@drawable/close_24px"
+        android:id="@+id/ivClose"
+        android:padding="@dimen/dp6"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/dp16"
+        />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp12"
+        android:fontFamily="@font/inter_light"
+        android:text="@string/enter_your_registered_phone_number_to_help_us_identify_you"
+        android:textColor="@color/white80"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/dp16"/>
+
+
+    <TextView
+        android:id="@+id/tvPhoneNumber"
+        style="@style/LightTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp24"
+        android:layout_marginTop="@dimen/dp24"
+        android:letterSpacing="0.2"
+        android:text="@string/phone_number"
+        android:textAllCaps="true"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:id="@+id/llLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp50"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp100"
+        android:background="@drawable/basic_corner"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber">
+
+        <androidx.emoji.widget.EmojiTextView
+            android:id="@+id/tvEmoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:minWidth="@dimen/dp40"
+            android:paddingStart="@dimen/dp10"
+            android:drawableEnd="@drawable/ic_dropdown_blue"
+            android:drawablePadding="@dimen/dp8"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginEnd="@dimen/dp2"
+            android:background="@null"
+            android:focusable="false"
+            android:hint="+1"
+            android:inputType="none"
+            android:textColor="@color/white80"
+            android:textColorHint="@color/white40"
+            android:textSize="@dimen/sp12"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="@dimen/dp1"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:background="@color/divider_gray" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            style="@style/EditTextDefaultSignup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp0"
+            android:layout_marginEnd="@dimen/dp12"
+            android:inputType="phone"
+            android:background="@null"
+            android:digits="0123456789"
+            android:hint="@string/enter_your_registered_phone_number"
+            android:textColorHint="@color/white40"
+            android:textSize="@dimen/sp14" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_light"
+        android:textColor="@color/red"
+        android:textSize="@dimen/sp12"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/llLinearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/llLinearLayout"/>
+    <Button
+        android:id="@+id/btnNext"
+        style="@style/BoldButtonHigh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_marginStart="@dimen/dp16"
+        android:layout_marginEnd="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp30"
+        android:layout_marginTop="@dimen/dp30"
+        app:layout_constraintTop_toBottomOf="@+id/llLinearLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

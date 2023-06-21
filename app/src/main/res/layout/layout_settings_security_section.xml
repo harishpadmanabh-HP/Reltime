@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/basic_corner"
+    android:paddingBottom="@dimen/dp33">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_divider_v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_divider_v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_divider_v3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gd_divider_v4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <TextView
+        android:id="@+id/tv_security_title"
+        style="@style/MediumTextView"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp23"
+        android:gravity="left"
+        android:text="@string/settings_nands_security_title"
+        app:layout_constraintEnd_toStartOf="@id/gd_divider_v2"
+        app:layout_constraintStart_toStartOf="@id/gd_divider_v1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_biometrics_label"
+        style="@style/MediumTextView"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp30"
+        android:gravity="left"
+        android:text="@string/settings_nands_biometrics_title"
+        app:layout_constraintEnd_toEndOf="@id/gd_divider_v2"
+        app:layout_constraintStart_toStartOf="@id/gd_divider_v1"
+        app:layout_constraintTop_toBottomOf="@id/tv_security_title" />
+
+    <TextView
+        android:id="@+id/tv_biometrics_desc"
+        style="@style/LightTextView"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        android:text="@string/settings_nands_biometrics_desc"
+        app:layout_constraintEnd_toEndOf="@id/gd_divider_v3"
+        app:layout_constraintStart_toStartOf="@id/gd_divider_v1"
+        app:layout_constraintTop_toBottomOf="@id/tv_biometrics_label" />
+
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_market_variation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:thumb="@drawable/settings_switch_thumb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_biometrics_label"
+        app:layout_constraintEnd_toEndOf="@id/gd_divider_v4"
+        app:layout_constraintTop_toTopOf="@+id/tv_biometrics_label"
+        app:track="@drawable/settings_switch_track" />
+
+    <View
+        android:id="@+id/v_dv1"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="@dimen/dp1"
+        android:layout_marginTop="@dimen/dp20"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="@id/gd_divider_v4"
+        app:layout_constraintStart_toStartOf="@id/gd_divider_v1"
+        app:layout_constraintTop_toBottomOf="@id/tv_biometrics_desc" />
+
+    <TextView
+        android:id="@+id/tvTransactionPinTitle"
+        style="@style/MediumTextView"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp30"
+        android:gravity="start"
+        android:text="@string/mpin"
+        app:layout_constraintEnd_toEndOf="@id/gd_divider_v2"
+        app:layout_constraintStart_toStartOf="@id/gd_divider_v1"
+        app:layout_constraintTop_toBottomOf="@id/v_dv1"  />
+
+    <TextView
+        android:id="@+id/tvTransactionPin"
+        style="@style/LightTextView"
+        android:layout_width="@dimen/dp0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp15"
+        android:text="@string/setup_transaction_pin_to_confirm_your_payments_and_transactions"
+        app:layout_constraintEnd_toEndOf="@id/gd_divider_v4"
+        app:layout_constraintStart_toStartOf="@id/gd_divider_v1"
+        app:layout_constraintTop_toBottomOf="@id/tvTransactionPinTitle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
