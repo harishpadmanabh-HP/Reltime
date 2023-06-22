@@ -664,7 +664,7 @@ to start using Nagra today.</string>
     <string name="for_more_please_check_our">"For more, Please check our "</string>
     <string name="privacy_policy_">Privacy Policy.</string>
     <string name="move_from">Move from</string>
-    <string name="type_in_or_choose_any_number_to_transfer_rto">Type in or choose any number to transfer EURO (€) or RTC</string>
+    <string name="type_in_or_choose_any_number_to_transfer_rto">Type in or choose any number to transfer EURO (€), GBP, USD or RTC</string>
     <string name="e_mail_address_">E-mail Address</string>
     <string name="type_recipient_email">Type the recipient’s E-mail</string>
     <string name="enter_recipient_email">Enter recipient email</string>
@@ -687,7 +687,7 @@ to start using Nagra today.</string>
     <string name="money_moved">Money moved</string>
     <string name="choose_my_account">Choose My Account</string>
     <string name="please_choose_account">Please select account</string>
-    <string name="transfer_my_rto_through">Transfer my EURO (€) or RTC through</string>
+    <string name="transfer_my_rto_through">Transfer my EURO (€), GBP, USD or RTC through</string>
     <string name="please_enter_email_address">Please enter email address</string>
     <string name="see_all_n_accounts">See all %1$s accounts</string>
     <string name="n_c_n_c">%1$s (%2$s)</string>
