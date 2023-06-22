@@ -14,6 +14,7 @@ import com.accubits.reltime.databinding.ActivitySwapSuccessBinding
 import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.utils.Extensions.copyToClipBoard
 import com.accubits.reltime.utils.Extensions.shareReceipt
+import com.accubits.reltime.utils.convertRTOtoEURO
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
@@ -114,10 +115,10 @@ class SwapSuccessActivity : AppCompatActivity() {
                     intent.getStringExtra(TO_AMOUNT) ?: "", sizeArray = arrayOf(0.5f, 1f, 0.5f)
                 )
             intent.getStringExtra(TRANSACTION_TO)?.let {
-                binding.tvTo.text = it
+                binding.tvTo.text = it.convertRTOtoEURO()
             }
             intent.getStringExtra(TRANSACTION_FROM)?.let {
-                binding.tvFrom.text = it
+                binding.tvFrom.text = it.convertRTOtoEURO()
             }
         } else {
             binding.tvTitle.text = resources.getString(R.string.bridge_success)

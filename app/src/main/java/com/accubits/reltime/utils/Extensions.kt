@@ -407,8 +407,8 @@ object Extensions {
         return when (this) {
             is RTO -> if (symbol == null) coinCode.convertRTOtoEURO()
             else "$coinCode (${symbol})".convertRTOtoEURO()
-            is JointAccount -> if (symbol == null) coinCode
-            else "$coinCode (${symbol})"
+            is JointAccount -> if (symbol == null) coinCode.convertRTOtoEURO()
+            else "$coinCode (${symbol})".convertRTOtoEURO()
             is CryptoWallet -> if (symbol == null) coinCode
             else "$coinCode (${symbol})"
             else -> ""
@@ -424,9 +424,9 @@ object Extensions {
         is Card -> cardName
         is BankAccount -> "---"
         is JointAccount -> if (symbol == null) {
-            "$coinCode $rtoBalance"
+            "$coinCode $rtoBalance".convertRTOtoEURO()
         } else {
-            "$coinCode (${symbol}) $rtoBalance"
+            "$coinCode (${symbol}) $rtoBalance".convertRTOtoEURO()
         }
         is CryptoWallet -> if (symbol == null) {
             "$coinCode $balance"

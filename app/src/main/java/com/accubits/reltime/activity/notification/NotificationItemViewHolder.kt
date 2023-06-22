@@ -10,6 +10,7 @@ import com.accubits.reltime.helpers.dateTimeUtils.DateTimeUtils
 import com.accubits.reltime.models.RowNotificationModel
 import com.accubits.reltime.utils.Extensions.createInitials
 import com.accubits.reltime.utils.Extensions.loadImageWithUrl
+import com.accubits.reltime.utils.convertRTOtoEURO
 import com.google.android.material.imageview.ShapeableImageView
 import smartadapter.viewholder.SmartViewHolder
 import java.text.DateFormat
@@ -33,7 +34,7 @@ open class NotificationItemViewHolder(parentView: ViewGroup) :
         val ivContainer = itemView.findViewById(R.id.ivContainer) as View
         val ivRead = itemView.findViewById(R.id.ivRead) as View
 
-        tvTitle.text = item.message
+        tvTitle.text = item.message.convertRTOtoEURO()
         val parser: DateFormat = SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.ENGLISH)
         val date: Date = parser.parse(item.created_at)
 

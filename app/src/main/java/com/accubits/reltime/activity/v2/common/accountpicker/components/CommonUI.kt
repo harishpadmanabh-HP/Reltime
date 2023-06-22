@@ -513,7 +513,7 @@ fun MoveBalanceBox(modifier: Modifier = Modifier, coinCode: String, balance: Str
                 id = R.string.n_balance_n,
                 coinCode,
                 balance
-            ),
+            ).convertRTOtoEURO(),
             style = MaterialTheme.typography.body1,
             modifier = Modifier.padding(start = 12.dp, end = 12.dp, top = 4.dp, bottom = 4.dp)
         )
