@@ -21,6 +21,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.annotation.DrawableRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.toLowerCase
 import androidx.core.app.ComponentActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -29,6 +32,7 @@ import androidx.core.text.color
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import coil.compose.rememberAsyncImagePainter
 import com.accubits.reltime.R
 import com.accubits.reltime.activity.contacts.model.ContactData
 import com.accubits.reltime.activity.myAccounts.model.*
@@ -80,7 +84,7 @@ object Extensions {
 
     fun Context.showToast(message: String?) {
         message?.let {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, message.convertReltimeToNagra().convertRTOtoEURO(), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -684,6 +688,10 @@ fun String.convertRTOtoEURO(): String {
     } else {
         this
     }
+}
+
+fun String.isBrandLogo(): Boolean {
+    return this.lowercase().contains("media/utils/acc_brand1.png".lowercase())
 }
 
 fun String.convertReltimeToNagra(): String {

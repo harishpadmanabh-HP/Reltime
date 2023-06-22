@@ -49,6 +49,7 @@ import com.accubits.reltime.utils.Extensions.openActivity
 import com.accubits.reltime.utils.Extensions.showToast
 import com.accubits.reltime.utils.convertRTOtoEURO
 import com.accubits.reltime.utils.convertReltimeToNagra
+import com.accubits.reltime.utils.isBrandLogo
 import com.accubits.reltime.views.mpin.MpinValidateActivity
 import dagger.hilt.android.AndroidEntryPoint
 import java.math.BigDecimal
@@ -336,7 +337,7 @@ private fun BridgeColumn(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = rememberAsyncImagePainter(iconPath),
+                painter = if (iconPath.isBrandLogo()) painterResource(id = R.drawable.nagra_round_small) else rememberAsyncImagePainter(iconPath),
                 contentDescription = "icon",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier

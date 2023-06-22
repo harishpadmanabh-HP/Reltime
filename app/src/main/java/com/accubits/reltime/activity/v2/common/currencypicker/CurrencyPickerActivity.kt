@@ -30,6 +30,7 @@ import com.accubits.reltime.activity.v2.ui.theme.*
 import com.accubits.reltime.activity.v2.wallet.swap.model.CryptoCurrency
 import com.accubits.reltime.utils.convertRTOtoEURO
 import com.accubits.reltime.utils.convertReltimeToNagra
+import com.accubits.reltime.utils.isBrandLogo
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.Serializable
 
@@ -107,21 +108,24 @@ private fun CryptoCurrencyRow(currency: CryptoCurrency, onConfirmClick: (CryptoC
             .fillMaxWidth()
     ) {
         Row(
-            modifier = Modifier.clickable { onConfirmClick(currency) }
+            modifier = Modifier
+                .clickable { onConfirmClick(currency) }
                 .wrapContentHeight()
                 .fillMaxWidth()
                 .padding(start = 16.dp, end = 32.dp, top = 16.dp, bottom = 16.dp),
             verticalAlignment = Alignment.CenterVertically,
             ) {
             Image(
-                painter = rememberAsyncImagePainter(currency.icon),
+                painter = if (currency.icon.isBrandLogo()) painterResource(id = R.drawable.nagra_round_small) else rememberAsyncImagePainter(currency.icon),
                 contentDescription = "icon",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(46.dp)
                     .clip(CircleShape)
             )
-            Column(modifier = Modifier.weight(1f).padding(start = 12.dp, end = 12.dp)) {
+            Column(modifier = Modifier
+                .weight(1f)
+                .padding(start = 12.dp, end = 12.dp)) {
                 Text(
                     modifier = Modifier,
                     text = currency.coin_name.convertReltimeToNagra().convertRTOtoEURO(),
@@ -138,7 +142,9 @@ private fun CryptoCurrencyRow(currency: CryptoCurrency, onConfirmClick: (CryptoC
                 painter = painterResource( R.drawable.ic_next),
                 contentDescription = "Icon",
                 tint = White,
-                modifier = Modifier.size(20.dp).padding(start = 12.dp)
+                modifier = Modifier
+                    .size(20.dp)
+                    .padding(start = 12.dp)
             )
 
         }

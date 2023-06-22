@@ -45,7 +45,7 @@
         android:layout_marginStart="@dimen/dp30"
         android:layout_marginTop="@dimen/dp16"
         android:layout_marginEnd="@dimen/dp30"
-        android:text="Losing the secret Reltime Recovery Key may lead to the loss of funds forever. Exposing or sharing the key to anybody could lead to theft. Keeping the key safe and secure is therefore of utmost importance."
+        android:text="Losing the secret Nagra Recovery Key may lead to the loss of funds forever. Exposing or sharing the key to anybody could lead to theft. Keeping the key safe and secure is therefore of utmost importance."
         android:textColor="#D4D4D4"
         android:textSize="@dimen/sp14"
         app:fontFamily="@font/inter_regular"

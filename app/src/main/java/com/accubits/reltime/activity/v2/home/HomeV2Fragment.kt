@@ -365,7 +365,7 @@ class HomeV2Fragment : Fragment()  {
     override fun onResume() {
         super.onResume()
         setUpKYCnWalletViews()
-        binding.ivVideo.setVideoURI(Uri.parse("android.resource://" + requireActivity().packageName.toString() + "/" + R.raw.reltimevideo))
+        binding.ivVideo.setVideoURI(Uri.parse("android.resource://" + requireActivity().packageName.toString() + "/" + R.raw.nagra))
         binding.ivVideo.seekTo(0)
         binding.ivVideo.start()
         callNotificationStatusAPI()
@@ -398,7 +398,7 @@ class HomeV2Fragment : Fragment()  {
         val mMediaController =
             dialog?.findViewById<UniversalMediaController>(R.id.media_controller);
         vvPreOrder?.setMediaController(mMediaController);
-        vvPreOrder?.setVideoURI(Uri.parse("android.resource://" + requireActivity().packageName.toString() + "/" + R.raw.reltime_biometric_card))
+        vvPreOrder?.setVideoURI(Uri.parse("android.resource://" + requireActivity().packageName.toString() + "/" + R.raw.nagra))
         vvPreOrder?.seekTo(1)
 
         ivPlay?.setOnClickListener {

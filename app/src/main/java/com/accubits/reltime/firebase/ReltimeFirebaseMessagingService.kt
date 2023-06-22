@@ -15,6 +15,8 @@ import com.accubits.reltime.activity.notification.NotificationActivity
 import com.accubits.reltime.activity.notification.NotificationDetailsActivity
 import com.accubits.reltime.helpers.PreferenceManager
 import com.accubits.reltime.models.DataNotificationModel
+import com.accubits.reltime.utils.convertRTOtoEURO
+import com.accubits.reltime.utils.convertReltimeToNagra
 import com.accubits.reltime.views.home.ContainerActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -101,15 +103,15 @@ class ReltimeFirebaseMessagingService: FirebaseMessagingService() {
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder: NotificationCompat.Builder =
             NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.nagra_round_small)
                 .setLargeIcon(
                     BitmapFactory.decodeResource(
-                        applicationContext.resources, R.mipmap.ic_launcher
+                        applicationContext.resources, R.mipmap.nagra_round_small
                     )
                 )
-                .setContentTitle(aContentTitle)
-                .setStyle(NotificationCompat.BigTextStyle().bigText(aContentText))
-                .setContentText(aContentText)
+                .setContentTitle(aContentTitle.convertRTOtoEURO().convertReltimeToNagra())
+                .setStyle(NotificationCompat.BigTextStyle().bigText(aContentText.convertRTOtoEURO().convertReltimeToNagra()))
+                .setContentText(aContentText.convertRTOtoEURO().convertReltimeToNagra())
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setSilent(false)

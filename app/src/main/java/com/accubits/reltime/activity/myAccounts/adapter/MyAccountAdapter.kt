@@ -15,6 +15,7 @@ import com.accubits.reltime.utils.Extensions.getAccountBalanceWithCoinCode
 import com.accubits.reltime.utils.Extensions.getAccountId
 import com.accubits.reltime.utils.Extensions.loadImageWithUrl
 import com.accubits.reltime.utils.convertRTOtoEURO
+import com.accubits.reltime.utils.isBrandLogo
 
 /*
 class MyAccountAdapter(private val listener: ItemClickListener) :
@@ -301,11 +302,15 @@ class MyAccountListAdapter(private val listener: ItemClickListener) : ListAdapte
                 tvBalanceLabel.visibility = View.VISIBLE
                 tvBalance.text =
                     account.getAccountBalanceWithCoinCode()// Utils.getRTOAmount(displayBalance)
-                ivTypeIcon.loadImageWithUrl(account.icon) {
-                    if (!it) {
-                        ivTypeIcon.setImageResource(R.drawable.ic_crypto)
-                    }
-                }
+               if (account.icon.isBrandLogo()) {
+                   ivTypeIcon.setImageResource(R.drawable.nagra_round_small)
+               } else {
+                   ivTypeIcon.loadImageWithUrl(account.icon) {
+                       if (!it) {
+                           ivTypeIcon.setImageResource(R.drawable.ic_crypto)
+                       }
+                   }
+               }
                 ivEdit.visibility = View.INVISIBLE
                 ivQr.visibility = View.VISIBLE
                 ivCopy.visibility = View.VISIBLE

@@ -29,9 +29,9 @@ class WalletRestoreSuccessActivity : AppCompatActivity() {
 
         if (intent.hasExtra("walletCreated")) {
             binding.apply {
-                textView28.text = "Reltime wallet created"
+                textView28.text = "Nagra wallet created"
                 textView29.text =
-                    "Your wallet was successfully created. All the services in Reltime has been unlocked"
+                    "Your wallet was successfully created. All the services in Nagra has been unlocked"
                 tvWalletAddress.text = preferenceManager.getPublicKeyFromLogin()
                 cWalletDetails.visibility = View.VISIBLE
 

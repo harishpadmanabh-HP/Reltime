@@ -25,8 +25,8 @@ class FullscreenVideoActivity : AppCompatActivity(), MediaPlayer.OnCompletionLis
                 binding.apply {
                     myvideoview.setOnCompletionListener(this@FullscreenVideoActivity);
                     myvideoview.setVideoURI(Uri.parse("android.resource://" + packageName.toString() + "/" +
-                            if(intent.getIntExtra(HomeV2Fragment.VIDEO_TYPE,1)==1)R.raw.reltime_biometric_card else
-                                R.raw.reltimevideo))
+                            if(intent.getIntExtra(HomeV2Fragment.VIDEO_TYPE,1)==1)R.raw.nagra else
+                                R.raw.nagra))
                     val mediaController = MediaController(this@FullscreenVideoActivity)
                     myvideoview.setMediaController(mediaController);
                     myvideoview.start();
