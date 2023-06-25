@@ -14,5 +14,12 @@ data class PublicKeyRequestModel(
     val RTO: String,
     @Expose
     @SerializedName("BTC")
-    val BTC: String
+    val BTC: String,
+    @Expose
+    @SerializedName("GBP")
+    val GBP: String,
+    @Expose
+    @SerializedName("USD")
+    val USD: String,
+
 )

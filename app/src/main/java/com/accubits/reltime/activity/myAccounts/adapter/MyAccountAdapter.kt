@@ -243,6 +243,7 @@ class MyAccountListAdapter(private val listener: ItemClickListener) : ListAdapte
     }
 
     override fun onBindViewHolder(holder: AccountDataHolder, position: Int) {
+        println("NAGRADEBUG ${getItem(position) is RTO}   ${getItem(position)}   ")
         when (val account = getItem(position)) {
             is RTO ->
                 holder.setWalletItem(
@@ -256,6 +257,7 @@ class MyAccountListAdapter(private val listener: ItemClickListener) : ListAdapte
             is BankAccount -> holder.setBankAccountItem(account = account)
             is Card -> holder.setCardItem(card = account)
             is CryptoWallet -> holder.setCrypto(account = account)
+
         }
     }
 

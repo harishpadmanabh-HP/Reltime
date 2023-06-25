@@ -171,7 +171,7 @@ class ConfirmRecoveryKeyActivity : AppCompatActivity() {
                 if (Utils.isNetworkAvailable(this@ConfirmRecoveryKeyActivity)!!) {
                     viewModel.doUpdateKey(
                         preferenceManager.getApiKey(),
-                        PublicKeyRequestModel(publicKey, publicKey,btcPublicKey)
+                        PublicKeyRequestModel(publicKey, publicKey,btcPublicKey,publicKey,publicKey)
                     )
                     updateUiForMpin()
                 }

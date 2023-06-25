@@ -28,5 +28,9 @@ data class Wallets(
     @SerializedName("RTC")
     val rTC: RTO?,
     @SerializedName("RTO")
-    val rTO: RTO?
+    val rTO: RTO?,
+    @SerializedName("GBP")
+    val gbp: RTO?,
+    @SerializedName("USD")
+    val usd: RTO?
 ) : Serializable

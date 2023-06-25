@@ -608,6 +608,8 @@ object Utils {
             accountList.add(it)
         }
         accountResult.wallets?.rTC?.let { accountList.add(it) }
+        accountResult.wallets?.gbp?.let { accountList.add(it) }
+        accountResult.wallets?.usd?.let { accountList.add(it) }
         accountResult.jointAccounts?.let { accountList.addAll(it) }
         accountResult.cryptoWallet?.let { accountList.addAll(it) }
         accountResult.bankAccounts?.let { accountList.addAll(it) }

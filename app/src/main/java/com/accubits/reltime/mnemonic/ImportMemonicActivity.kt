@@ -105,7 +105,7 @@ class ImportMemonicActivity : AppCompatActivity() {
             if (Utils.isNetworkAvailable(this@ImportMemonicActivity)!!) {
                 viewModel.doRestorePublicKey(
                     preferenceManager.getApiKey(),
-                    PublicKeyRequestModel(publicKey, publicKey,btcPublicKey)
+                    PublicKeyRequestModel(publicKey, publicKey,btcPublicKey,publicKey,publicKey)
                 )
             }
         } else {
