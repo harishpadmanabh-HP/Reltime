@@ -142,6 +142,12 @@ fun AccountData(
             accountResult.wallets?.rTC?.let {
                 wallet.add(it)
             }
+            accountResult.wallets?.usd?.let {
+                wallet.add(it)
+            }
+            accountResult.wallets?.gbp?.let {
+                wallet.add(it)
+            }
             if (wallet.isNotEmpty())
                 item {
                     AccountContainer(
