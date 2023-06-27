@@ -44,6 +44,7 @@ import com.accubits.reltime.utils.Extensions.getAccountName
 import com.accubits.reltime.utils.Extensions.getCoinCode
 import com.accubits.reltime.utils.Extensions.getSymbolWithCoinCode
 import com.accubits.reltime.utils.Extensions.showToast
+import com.accubits.reltime.utils.convertRTOtoEURO
 import com.accubits.reltime.views.mpin.MpinValidateActivity
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.Serializable
@@ -398,7 +399,7 @@ private fun StatisticsAPI(viewModel: MoveViewModel, selectedToAccount: ReltimeAc
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(12.dp),
-                    text = convertedRate,
+                    text = convertedRate.convertRTOtoEURO(),
                     style = TextStyle(
                         fontSize = 16.sp,
                         textAlign = TextAlign.Center,

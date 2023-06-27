@@ -17,6 +17,7 @@ import com.accubits.reltime.R
 import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.models.TransactionItem
 import com.accubits.reltime.utils.convertRTOtoEURO
+import com.accubits.reltime.utils.convertReltimeToNagra
 
 object ContactsDiffUtilBorrows : DiffUtil.ItemCallback<TransactionItem>() {
     override fun areItemsTheSame(
@@ -73,7 +74,7 @@ class TransactionPagedV2Adapter(
                     )
                 }
                 tvName.text = transactionItem.sender?.let {
-                    context.resources.getString(R.string.from_n, it.name)
+                    context.resources.getString(R.string.from_n, it.name).convertRTOtoEURO().convertReltimeToNagra()
                 }
             } else {
                 tvRto.text = transactionItem.sender?.let {
@@ -85,7 +86,7 @@ class TransactionPagedV2Adapter(
                     )
                 }
                 tvName.text = transactionItem.receiver?.let {
-                    context.resources.getString(R.string.to_n, it.name)
+                    context.resources.getString(R.string.to_n, it.name).convertRTOtoEURO().convertReltimeToNagra()
                 }
             }
             imgTransaction.setImageDrawable(

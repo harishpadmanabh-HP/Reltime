@@ -36,7 +36,7 @@
                 android:id="@+id/iv_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp32"
-                android:src="@drawable/ic_logo_name"
+                android:src="@drawable/nagara_logo_small"
                 app:layout_constraintBottom_toTopOf="@+id/guideline80"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -9,6 +9,8 @@ import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.models.TransactionItem
 import com.accubits.reltime.utils.Extensions.copyToClipBoard
 import com.accubits.reltime.utils.Extensions.shareReceipt
+import com.accubits.reltime.utils.convertRTOtoEURO
+import com.accubits.reltime.utils.convertReltimeToNagra
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,8 +40,8 @@ class TransactionDetailV2Activity : AppCompatActivity() {
 
     private fun transactionData(it: TransactionItem) {
         binding.tvTransactionId.text = it.txnId
-        binding.tvTo.text = it.receiver?.name
-        binding.tvFrom.text = it.sender?.name
+        binding.tvTo.text = it.receiver?.name?.convertRTOtoEURO()?.convertReltimeToNagra()
+        binding.tvFrom.text = it.sender?.name?.convertRTOtoEURO()?.convertReltimeToNagra()
 
         binding.tvDate.text =
             Utils.getDateCurrentTimeZone1(it.timestamp.toDouble(), Utils.DATE_FORMAT_DEFAULT)

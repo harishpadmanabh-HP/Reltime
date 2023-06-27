@@ -218,7 +218,7 @@
     <string name="your_ekyc_verificaion_is_in_progress_this_will_take_between_1_2_business_days">Your eKYC Verification is in progress. This will take between 1–2 business days.</string>
     <string name="interest_rate">Interest Rate</string>
     <string name="interest__rate">Interest rate</string>
-    <string name="select_number_of_installments">Select number of instalment</string>
+    <string name="select_number_of_installments">Select number of installment</string>
     <string name="collateral">Collateral</string>
     <string name="collateral_">Collateral:</string>
     <string name="filter">Filter</string>
@@ -473,7 +473,7 @@ to start using Nagra today.</string>
     <string name="borrow">Borrow</string>
     <string name="amount_">Amount</string>
     <string name="enter_the_interest_rate">Enter the interest rate</string>
-    <string name="select_number_of_instalments">Select the number of instalments</string>
+    <string name="select_number_of_instalments">Select the number of installments</string>
     <string name="loan_term_">Loan term</string>
     <string name="loan_term__">Loan term</string>
     <string name="loan_amount">Loan amount</string>
