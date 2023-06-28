@@ -11,6 +11,7 @@ import com.accubits.reltime.databinding.ActivityTransferSuccessBinding.inflate
 import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.utils.Extensions.copyToClipBoard
 import com.accubits.reltime.utils.Extensions.shareReceipt
+import com.accubits.reltime.utils.convertRTOtoEURO
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -119,10 +120,10 @@ class TransferSuccessActivity : AppCompatActivity() {
 
 
         intent.getStringExtra(TransferObject.TRANSACTION_TO)?.let {
-            binding.tvTo.text = it
+            binding.tvTo.text = it.convertRTOtoEURO()
         }
         intent.getStringExtra(TransferObject.TRANSACTION_FROM)?.let {
-            binding.tvFrom.text = it
+            binding.tvFrom.text = it.convertRTOtoEURO()
         }
 
         intent.getStringExtra(TransferObject.TRANSACTION_ID)?.let {

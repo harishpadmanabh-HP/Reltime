@@ -132,7 +132,7 @@ class SwapSuccessActivity : AppCompatActivity() {
                     intent.getStringExtra(TRANSACTION_FROM)
                 )
                 binding.tvFromAmount.text = setLabelSize(from)
-                binding.tvFrom.text = from
+                binding.tvFrom.text = from.convertRTOtoEURO()
             }
             if (intent.getStringExtra(TRANSACTION_TO) != null && intent.getStringExtra(TO_COIN_CODE) != null) {
                 val to = resources.getString(
@@ -141,7 +141,7 @@ class SwapSuccessActivity : AppCompatActivity() {
                     intent.getStringExtra(TRANSACTION_TO)
                 )
                 binding.tvToAmount.text = setLabelSize(to)
-                binding.tvTo.text = to
+                binding.tvTo.text = to.convertRTOtoEURO()
             }
             if (intent.getStringExtra(TO_AMOUNT) != null && intent.getStringExtra(TO_COIN_CODE) != null) {
                 binding.tvBridgeAmount.text = Utils.setAmountWithCoin(

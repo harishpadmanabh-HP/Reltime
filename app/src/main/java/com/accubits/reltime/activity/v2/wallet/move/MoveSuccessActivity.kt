@@ -93,11 +93,11 @@ class MoveSuccessActivity : AppCompatActivity() {
     private fun setData() {
 
         intent.getStringExtra(TRANSACTION_TO)?.let {
-            binding.tvTo.text = it
-            binding.tvToAccountType.text=it
+            binding.tvTo.text = it.convertRTOtoEURO()
+            binding.tvToAccountType.text=it.convertRTOtoEURO()
         }
         intent.getStringExtra(TRANSACTION_FROM)?.let {
-            binding.tvFrom.text = it
+            binding.tvFrom.text = it.convertRTOtoEURO()
             binding.tvFromAccountType.text=it.convertRTOtoEURO()
         }
 
