@@ -11,6 +11,7 @@ import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.utils.Extensions.copyToClipBoard
 import com.accubits.reltime.utils.Extensions.shareReceipt
 import com.accubits.reltime.utils.Extensions.showToast
+import com.accubits.reltime.utils.convertRTOtoEURO
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
@@ -97,7 +98,7 @@ class MoveSuccessActivity : AppCompatActivity() {
         }
         intent.getStringExtra(TRANSACTION_FROM)?.let {
             binding.tvFrom.text = it
-            binding.tvFromAccountType.text=it
+            binding.tvFromAccountType.text=it.convertRTOtoEURO()
         }
 
         intent.getStringExtra(TRANSACTION_ID)?.let {

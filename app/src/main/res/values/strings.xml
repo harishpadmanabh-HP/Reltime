@@ -594,14 +594,14 @@ to start using Nagra today.</string>
     <string name="with_collateral">With Collateral</string>
     <string name="about_reltime_desc">With Nagra, you can take back control of your finances. Headquartered in Oslo, Nagra a building a new financial tribe of people and businesses in 150 countries. Nagra has developed a unique, Layer 1, Proof of Authority blockchain as well as the world’s first Web3 financial ecosystem.
 \n\nNagra’s goal is by 2025 for 100,000,000 people and enterprises to be financially free and do more with money by sending, receiving, withdrawing, depositing, borrowing, lending, earning, swapping, interacting, and transacting on the Metaverses and in the real world.
-        \n\nFor further information, visit www.reltime.com.</string>
+        \n\nFor further information, visit www.nagra.com.</string>
     <string name="confirm_borrow_with_collateral">Are you sure you want to confirm borrowing from %1$s the amount of %2$s %3$s with the collateral amount of %2$s %4$s?</string>
     <string name="confirm_borrow_without_collateral">Are you sure you want to confirm borrowing from %1$s the amount of %2$s %3$s?</string>
 
     <string name="reject_borrow_with_collateral">Are you sure you want to reject the Borrow from %1$s the amount of %2$s %3$s with the collateral amount of %2$s %4$s?</string>
     <string name="reject_borrow_without_collateral">Are you sure you want to reject the Borrow from %1$s the amount of %2$s %3$s?</string>
 
-    <string name="support_desription">For any support, questions or suggestions, feel free to contact our team at support@reltime.com.</string>
+    <string name="support_desription">For any support, questions or suggestions, feel free to contact our team at support@nagra.com.</string>
     <string name="n_left_out_of_m">%1$s Left (Out of %2$s)</string>
     <string name="copy_your_reltime_recovery_key">Copy your Nagra Recovery Key</string>
     <string name="copied_and_continue">Copied and continue</string>
