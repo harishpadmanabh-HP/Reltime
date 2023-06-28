@@ -612,7 +612,7 @@ to start using Nagra today.</string>
     <string name="kyc_status">KYC %1$s</string>
     <string name="email_id">Email ID</string>
     <string name="enter_registered_email_id">Please enter your registered email id</string>
-    <string name="share_message">Hello, Welcome to Nagra. %1$s invites you to provide lending through Nagra. Your referral code is %2$s.\nhttps://reltime.page.link/29hQ</string>
+    <string name="share_message">Hello, Welcome to Nagra. %1$s invites you to provide lending through Nagra. Your referral code is %2$s.</string>
     <string name="no_accounts_found">No accounts found!</string><!-- \n\nhttps://reltime.page.link/29hQ</string>-->
 
 
