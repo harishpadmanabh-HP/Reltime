@@ -15,6 +15,7 @@ import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.utils.Extensions.copyToClipBoard
 import com.accubits.reltime.utils.Extensions.shareReceipt
 import com.accubits.reltime.utils.convertRTOtoEURO
+import com.accubits.reltime.utils.convertReltimeToNagra
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
@@ -115,10 +116,10 @@ class SwapSuccessActivity : AppCompatActivity() {
                     intent.getStringExtra(TO_AMOUNT) ?: "", sizeArray = arrayOf(0.5f, 1f, 0.5f)
                 )
             intent.getStringExtra(TRANSACTION_TO)?.let {
-                binding.tvTo.text = it.convertRTOtoEURO()
+                binding.tvTo.text = it.convertRTOtoEURO().convertReltimeToNagra()
             }
             intent.getStringExtra(TRANSACTION_FROM)?.let {
-                binding.tvFrom.text = it.convertRTOtoEURO()
+                binding.tvFrom.text = it.convertRTOtoEURO().convertReltimeToNagra()
             }
         } else {
             binding.tvTitle.text = resources.getString(R.string.bridge_success)
@@ -130,18 +131,18 @@ class SwapSuccessActivity : AppCompatActivity() {
                     R.string.n_n,
                     intent.getStringExtra(FROM_COIN_CODE),
                     intent.getStringExtra(TRANSACTION_FROM)
-                )
+                ).convertRTOtoEURO().convertReltimeToNagra()
                 binding.tvFromAmount.text = setLabelSize(from)
-                binding.tvFrom.text = from.convertRTOtoEURO()
+                binding.tvFrom.text = from
             }
             if (intent.getStringExtra(TRANSACTION_TO) != null && intent.getStringExtra(TO_COIN_CODE) != null) {
                 val to = resources.getString(
                     R.string.n_n,
                     intent.getStringExtra(TO_COIN_CODE),
                     intent.getStringExtra(TRANSACTION_TO)
-                )
+                ).convertRTOtoEURO().convertReltimeToNagra()
                 binding.tvToAmount.text = setLabelSize(to)
-                binding.tvTo.text = to.convertRTOtoEURO()
+                binding.tvTo.text = to
             }
             if (intent.getStringExtra(TO_AMOUNT) != null && intent.getStringExtra(TO_COIN_CODE) != null) {
                 binding.tvBridgeAmount.text = Utils.setAmountWithCoin(
