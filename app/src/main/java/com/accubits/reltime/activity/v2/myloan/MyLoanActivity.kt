@@ -33,6 +33,7 @@ import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.models.*
 import com.accubits.reltime.stripe.StripeViewModel
 import com.accubits.reltime.utils.Extensions.showToast
+import com.accubits.reltime.utils.convertRTOtoEURO
 import com.accubits.reltime.views.lend.LendSuccessActivity
 import com.accubits.reltime.views.mpin.MpinValidateActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -614,7 +615,7 @@ class MyLoanActivity : AppCompatActivity() {
             dialog.findViewById<ConstraintLayout>(R.id.vSelectedAccount)
         val tvRTO =
             dialog.findViewById<AppCompatTextView>(R.id.tvRTO)
-        tvAccountName.text = selectedAccount?.name
+        tvAccountName.text = selectedAccount?.name?.convertRTOtoEURO()
         tvBalance.text = selectedAccount?.rto_balance
         tvRTO.text = selectedAccount?.coinCode?.let {
             Utils.coinCodeWithSymbol(tvRTO.context,

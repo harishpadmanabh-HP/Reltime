@@ -9,6 +9,7 @@ import com.accubits.reltime.R
 import com.accubits.reltime.helpers.Utils
 import com.accubits.reltime.models.GetLoanAccountSuccessModel
 import com.accubits.reltime.utils.CustomEvent
+import com.accubits.reltime.utils.convertRTOtoEURO
 import smartadapter.SmartRecyclerAdapter
 import smartadapter.viewevent.model.ViewEvent
 import smartadapter.viewevent.viewholder.CustomViewEventListenerHolder
@@ -33,13 +34,13 @@ open class LoanAccountsViewHolder(parentView: ViewGroup) :
       //  val tvCoinType = itemView.findViewById(R.id.tvRTO) as AppCompatTextView
 
         if(item.name.equals("RTO Wallet")){
-            ivImageView.setImageDrawable(itemView.context.resources.getDrawable(R.drawable.ic_rto_home))
+            ivImageView.setImageDrawable(itemView.context.resources.getDrawable(R.drawable.nagra_round_small))
         }else{
             ivImageView.setImageDrawable(itemView.context.resources.getDrawable(R.drawable.ic_add_joint))
         }
 
         radio.isChecked = item.isSelected
-        tvAccountName.text=item.name
+        tvAccountName.text=item.name.convertRTOtoEURO()
         tvAccountBalance.text="${Utils.coinCodeWithSymbol(tvAccountBalance.context,item.coinCode,item.symbol)} ${item.rto_balance}"
        // tvCoinType.text=
         radio.setOnClickListener {
