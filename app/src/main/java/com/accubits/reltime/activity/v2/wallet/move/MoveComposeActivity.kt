@@ -64,6 +64,7 @@ class MoveComposeActivity : ComponentActivity() {
                         launchAccountPicker(
                             accountType,
                             accountResult,
+                            if (accountType == ACCOUNT_TYPE_MOVE_FROM) null else viewModel.selectedFromAccount.value,
                             if (accountType == ACCOUNT_TYPE_MOVE_FROM) viewModel.selectedFromAccount.value else viewModel.selectedToAccount.value
                         )
                     }, onMoveClick = {
@@ -146,12 +147,19 @@ class MoveComposeActivity : ComponentActivity() {
     private fun launchAccountPicker(
         pickerFor: String,
         accountResult: AccountResult?,
+        fromAccount: ReltimeAccount?,
         selectedAccount: ReltimeAccount?
     ) {
         val intent = Intent(
             this,
             AccountPickerComposeActivity::class.java
         )
+        fromAccount?.let {
+            intent.putExtra(
+                AccountPickerComposeActivity.EXTRA_FROM_ACCOUNT,
+                fromAccount as Serializable
+            )
+        }
         selectedAccount?.let {
             intent.putExtra(
                 AccountPickerComposeActivity.EXTRA_SELECTED_ACCOUNT,
@@ -288,6 +296,7 @@ fun FromAccount(
                             onToAccountClick = onAccountClick,
                             accountResult = response.data.result,
                             inputText = inputText,
+                            selectedFromAccount = selectedFromAccount,
                             selectedToAccount = selectedToAccount,
                             enableState = enableState
                         )
@@ -333,6 +342,7 @@ private fun ToAccount(
     onToAccountClick: (accountType: String, accountResult: AccountResult?) -> Unit,
     accountResult: AccountResult?,
     inputText: MutableState<TextFieldValue>,
+    selectedFromAccount: ReltimeAccount?,
     selectedToAccount: ReltimeAccount?,
     enableState: MutableState<Boolean>
 ) {

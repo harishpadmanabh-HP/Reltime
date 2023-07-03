@@ -17,13 +17,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.accubits.reltime.R
+import com.accubits.reltime.activity.myAccounts.model.JointAccount
 import com.accubits.reltime.activity.myAccounts.model.ReltimeAccount
+import com.accubits.reltime.activity.v2.common.accountpicker.AccountPickerComposeActivity.Companion.ACCOUNT_TYPE_MOVE_TO
 import com.accubits.reltime.activity.v2.common.accountpicker.components.*
 import com.accubits.reltime.activity.v2.common.accountpicker.viewmodel.AccountPicketViewModel
 import com.accubits.reltime.activity.v2.ui.theme.ReltimeTheme
 import com.accubits.reltime.activity.withdraw.model.AccountResult
 import com.accubits.reltime.api.ApiCallStatus
 import com.accubits.reltime.helpers.Utils
+import com.accubits.reltime.utils.Extensions.getCoinCode
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.Serializable
 
@@ -32,6 +35,7 @@ class AccountPickerComposeActivity : ComponentActivity() {
     private val viewModel by viewModels<AccountPicketViewModel>()
 
     companion object {
+        const val EXTRA_FROM_ACCOUNT = "from_account"
         const val EXTRA_SELECTED_ACCOUNT = "selected_account"
         const val EXTRA_ACCOUNT_TYPE = "account_type"
         const val EXTRA_ACCOUNT_LIST = "account_list"
@@ -48,7 +52,9 @@ class AccountPickerComposeActivity : ComponentActivity() {
                 AppScaffoldV2(R.string.my_accounts, content = {
                     Content(
                         viewModel,
+                        intent.getStringExtra(EXTRA_ACCOUNT_TYPE),
                         intent.getSerializableExtra(EXTRA_ACCOUNT_LIST) as AccountResult?,
+                        intent.getSerializableExtra(EXTRA_FROM_ACCOUNT) as ReltimeAccount?,
                         intent.getSerializableExtra(EXTRA_SELECTED_ACCOUNT) as ReltimeAccount?
                     ) { selectedAccount ->
                         setOnNextButtonClick(selectedAccount)
@@ -79,7 +85,9 @@ class AccountPickerComposeActivity : ComponentActivity() {
 @Composable
 fun Content(
     viewModel: AccountPicketViewModel,
+    accountType : String?,
     accountResult: AccountResult?,
+    fromAccount: ReltimeAccount?,
     selectedAccount: ReltimeAccount?,
     onConfirmClick: (ReltimeAccount) -> Unit,// = hiltViewModel(),
 ) {
@@ -89,17 +97,17 @@ fun Content(
             text = stringResource(id = R.string.select_account),
             style = MaterialTheme.typography.body1
         )
-        AccountData(viewModel = viewModel, onConfirmClick, accountResult, selectedAccount)
+        AccountData(viewModel = viewModel, onConfirmClick, accountResult, fromAccount, selectedAccount, accountType)
     }
 }
 
 @Composable
 fun AccountData(
     viewModel: AccountPicketViewModel, onConfirmClick: (ReltimeAccount) -> Unit,
-    accountResult: AccountResult?, selectedAccount: ReltimeAccount?
+    accountResult: AccountResult?, fromAccount: ReltimeAccount?, selectedAccount: ReltimeAccount?, accountType : String?
 ) {
     if (accountResult != null) {
-        AccountData(onConfirmClick, accountResult, selectedAccount)
+        AccountData(onConfirmClick, accountResult, fromAccount, selectedAccount, accountType)
         return
     }
     val response = viewModel.listResponseFlow.collectAsState().value
@@ -110,7 +118,7 @@ fun AccountData(
         ApiCallStatus.SUCCESS -> {
             val responseOk = response.data?.status == 200 && response.data.success
             if (responseOk && response.data != null) {
-                AccountData(onConfirmClick, response.data.result, selectedAccount)
+                AccountData(onConfirmClick, response.data.result, fromAccount, selectedAccount, accountType)
             }
         }
         ApiCallStatus.ERROR -> {
@@ -125,7 +133,7 @@ fun AccountData(
 @Composable
 fun AccountData(
     onConfirmClick: (ReltimeAccount) -> Unit,
-    accountResult: AccountResult, selectedAccount: ReltimeAccount?
+    accountResult: AccountResult, fromAccount: ReltimeAccount?, selectedAccount: ReltimeAccount?, accountType : String?
 ) {
     val accountList = Utils.buildAccountsList(accountResult)
     if (accountList.isEmpty()) {
@@ -156,15 +164,18 @@ fun AccountData(
                         selectedState
                     )
                 }
-            accountResult.jointAccounts?.let {
-                if (it.isEmpty())
-                    return@let
-                item {
-                    AccountContainer(
-                        R.string.account_name_joint_account,
-                        it,
-                        selectedState
-                    )
+            if ((accountType != ACCOUNT_TYPE_MOVE_TO) ||
+                (accountType == ACCOUNT_TYPE_MOVE_TO  && fromAccount?.getCoinCode() == "RTO" ||  fromAccount is JointAccount)) {
+                accountResult.jointAccounts?.let {
+                    if (it.isEmpty())
+                        return@let
+                    item {
+                        AccountContainer(
+                            R.string.account_name_joint_account,
+                            it,
+                            selectedState
+                        )
+                    }
                 }
             }
             accountResult.cryptoWallet?.let {
