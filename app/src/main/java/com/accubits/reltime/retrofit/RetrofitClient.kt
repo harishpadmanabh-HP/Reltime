@@ -51,6 +51,7 @@ object RetrofitClient {
             .addInterceptor { chain ->
                 chain.proceed(chain.request().newBuilder().also {
                     it.addHeader("Accept", "application/json")
+                    it.addHeader("App", "Nagra")
                 }.build())
             }.also { client ->
                 authenticator?.let { client.authenticator(it) }
