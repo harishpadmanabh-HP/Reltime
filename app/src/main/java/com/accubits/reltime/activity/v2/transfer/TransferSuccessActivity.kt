@@ -131,7 +131,7 @@ class TransferSuccessActivity : AppCompatActivity() {
         }
 
         intent.getStringExtra(TransferObject.ACCOUNT)?.let {
-            binding.tvAccount.text = it
+            binding.tvAccount.text = it.convertRTOtoEURO()
         }
     }
 
