@@ -299,6 +299,7 @@
     <string name="time_ago_full_hour">%1$d hour ago</string>
     <string name="time_ago_full_hours">%1$d hours ago</string>
     <string name="time_ago_full_days">%1$d days ago</string>
+    <string name="time_ago_full_day">%1$d day ago</string>
     <string name="time_ago_full_month">%1$d month ago</string>
     <string name="time_ago_full_months">%1$d months ago</string>
 
