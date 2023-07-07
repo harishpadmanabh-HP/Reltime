@@ -125,6 +125,7 @@ object AppModule {
                 chain.proceed(chain.request().newBuilder().also {
                     it.addHeader("Accept", "application/json")
                     it.addHeader("Time-Zone", TimeZone.getDefault().id)
+                    it.addHeader("App", "Nagra")
                 }.build())
             }.also { client ->
                 authenticator?.let { client.authenticator(it) }

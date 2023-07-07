@@ -34,24 +34,28 @@ object RetrofitClient {
 
         val logging = HttpLoggingInterceptor()
         logging.setLevel(levelType)
-        val okhttpClient = OkHttpClient.Builder()
+        val okhttpClient = OkHttpClient.Builder().addInterceptor { chain ->
+            chain.proceed(chain.request().newBuilder().also {
+                it.addHeader("App", "Nagra")
+            }.build())
+        }.also { client ->
+            client.addInterceptor(logging)
+        }.build()
 
-        okhttpClient.addInterceptor(logging)
         // val authenticator = TokenAuthenticator(application)
 
         Retrofit.Builder()
             .baseUrl(AppConfig.getBaseUrl())
-            .client(okhttpClient.build())
+            .client(okhttpClient)
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
     }
 
-    private fun getRetrofitClient(authenticator: Authenticator? = null): OkHttpClient {
+  /*  private fun getRetrofitClient(authenticator: Authenticator? = null): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
                 chain.proceed(chain.request().newBuilder().also {
                     it.addHeader("Accept", "application/json")
-                    it.addHeader("App", "Nagra")
                 }.build())
             }.also { client ->
                 authenticator?.let { client.authenticator(it) }
@@ -61,7 +65,7 @@ object RetrofitClient {
                     client.addInterceptor(logging)
                 }
             }.build()
-    }
+    }*/
 
     val apiInterface: ApiInterface by lazy {
         retrofitClient
