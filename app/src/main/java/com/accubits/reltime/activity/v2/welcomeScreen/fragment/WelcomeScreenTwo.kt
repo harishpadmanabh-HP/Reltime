@@ -21,10 +21,10 @@ class WelcomeScreenTwo : Fragment() {
     ): View {
         binding = FragmentScreenTwoBinding.inflate(inflater, container, false)
         binding.txtLabel.visibility = View.GONE
-        Glide.with(this)
+       /* Glide.with(this)
             .asGif()
             .load(R.drawable.welcome_screen_two)
-            .into(binding.gif)
+            .into(binding.gif)*/
         return binding.root
     }
 }

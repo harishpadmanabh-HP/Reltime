@@ -21,10 +21,10 @@ class WelcomeScreenFour : Fragment() {
     ): View {
         binding = FragmentScreenFourBinding.inflate(inflater, container, false)
         binding.txtLabel.visibility = View.GONE
-        Glide.with(this)
+      /*  Glide.with(this)
             .asGif()
             .load(R.drawable.welcome_screen_four)
-            .into(binding.gif)
+            .into(binding.gif)*/
         return binding.root
     }
 }
