@@ -624,7 +624,7 @@ object DateTimeUtils {
                     R.string.time_ago_hours
                 )
             phrase = String.format(s, Math.round(hours))
-        } else if (hours < 42) {
+        } /*else if (hours < 42) {
             phrase = if (isYesterday(date)) {
                 context.getString(R.string.time_ago_yesterday_at, formatTime(date))
             } else {
@@ -633,9 +633,12 @@ object DateTimeUtils {
                     if (style.equals(DateTimeStyle.AGO_FULL_STRING)) DateTimeStyle.FULL else DateTimeStyle.SHORT
                 )
             }
-        } else if (days < 30) {
+        }*/ else if (days < 30) {
             s =
-                if (style.equals(DateTimeStyle.AGO_FULL_STRING)) context.getString(R.string.time_ago_full_days) else context.getString(
+                if (style.equals(DateTimeStyle.AGO_FULL_STRING)) {
+                    if (days < 2)
+                    context.getString(R.string.time_ago_full_day) else context.getString(R.string.time_ago_full_days)
+                } else context.getString(
                     R.string.time_ago_days
                 )
             phrase = String.format(s, Math.round(days))
