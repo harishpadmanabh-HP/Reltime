@@ -79,8 +79,8 @@ class SplashActivity : AppCompatActivity() {
                 when (response.status) {
                     ApiCallStatus.SUCCESS -> {
                         if (response.data?.status == 200 && response.data.success && response.data.result != null) {
-                            preferenceManager.setPrivacyPolicy(response.data.result.privacy_url)
-                            preferenceManager.setTermsAndConditions(response.data.result.terms_url)
+                            preferenceManager.setPrivacyPolicy("https://www.nagra.com/privacy-notice")
+                            preferenceManager.setTermsAndConditions("https://www.nagra.com/terms-use")
                             if (BuildConfig.VERSION_CODE < response.data.result.android_version.immediate.toLong()) {
                                 //TODO immediate update
                                 showDialog(
