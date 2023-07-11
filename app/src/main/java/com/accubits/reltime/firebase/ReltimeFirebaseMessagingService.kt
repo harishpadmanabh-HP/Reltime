@@ -109,9 +109,9 @@ class ReltimeFirebaseMessagingService: FirebaseMessagingService() {
                         applicationContext.resources, R.mipmap.nagra_round_small
                     )
                 )
-                .setContentTitle(aContentTitle.convertRTOtoEURO().convertReltimeToNagra())
-                .setStyle(NotificationCompat.BigTextStyle().bigText(aContentText.convertRTOtoEURO().convertReltimeToNagra()))
-                .setContentText(aContentText.convertRTOtoEURO().convertReltimeToNagra())
+                .setContentTitle(aContentTitle)
+                .setStyle(NotificationCompat.BigTextStyle().bigText(aContentText))
+                .setContentText(aContentText)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setSilent(false)
